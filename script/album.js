@@ -2,12 +2,11 @@ const deezerUrl = "https://striveschool-api.herokuapp.com/api/deezer"
 const search = "search"
 const album = "album"
 const artist = "artist"
-const artista1 = "pinguini"
+const artista1 = "queen"
+let albumID
+let albumTitle
 
-let trackListAlbum
-
-// class ALBUM(title, _cover, _tracklist)
-const searchAPI = function () {
+const getAlbumID = function () {
   fetch(deezerUrl + "/" + search + "?q=" + artista1)
     .then((response) => {
       if (response.ok) {
@@ -22,25 +21,22 @@ const searchAPI = function () {
       //prendo un numero randomi da 0 a 25 perchè ho notato che gli array delle canzoni sono sempre da 25, e per non prendere sempre la prima pensavo di prendere in maniera randomica così da rendere il  tutto più dinamico
 
       const randomTrackIndex = Math.floor(Math.random() * 25)
-      const albumID = data.data[randomTrackIndex].album.id
-      const albumTitle = data.data[randomTrackIndex].album.title
-      trackListAlbum = data.data[randomTrackIndex].album.tracklist
+      albumID = data.data[randomTrackIndex].album.id
+      albumTitle = data.data[randomTrackIndex].album.title
+
       console.log("album ID e title", albumID, albumTitle)
-      console.log("Tracklist dell'album", trackListAlbum)
-      return albumID, albumTitle, trackListAlbum
+      return albumID, albumTitle
     })
 
     .catch((err) => {
       console.log("Errore", err)
     })
 }
-searchAPI()
+getAlbumID()
 
 setTimeout(() => {
-  console.log("API TRACKLIST fuori dalla funzione searchAPI:", trackListAlbum)
-
   const createAlbumPage = function () {
-    fetch("https://cors-anywhere.herokuapp.com/" + trackListAlbum)
+    fetch(deezerUrl + "/" + album + "/" + albumID)
       .then((response) => {
         if (response.ok) {
           return response.json()
@@ -49,7 +45,15 @@ setTimeout(() => {
         }
       })
       .then((data) => {
-        console.log("DATA TRACKLIST", data)
+        console.log(
+          "Queste sono tutte le canzoni presenti nell'album " +
+            albumTitle +
+            " con ID " +
+            albumID
+        )
+        data.tracks.data.forEach((song) => {
+          console.log(song.title)
+        })
       })
       .catch((err) => {
         console.log("Errore", err)
