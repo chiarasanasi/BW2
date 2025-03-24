@@ -17,6 +17,13 @@
       #scrollspy::-webkit-scrollbar-track {
         background-color: #121212;
       }
+      .card {
+        background-color: #212529;
+      }
+      .card:hover {
+        background-color: #32383e;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
     </style>
   </head>
   <body>
@@ -232,7 +239,26 @@
             </ul> -->
           </div>
         </nav>
-        <article class="col-md-7 col-lg-7 min-vh-100"></article>
+        <article
+          class="col-md-7 col-lg-7 min-vh-100 bg-dark p-4 d-flex flex-column"
+        >
+          <h4 class="text-white my-4">Album che potrebbero piacerti</h4>
+          <div class="d-flex flex-wrap" id="album-home">
+            <!-- <div id="album-card" class="card border-0 p-3">
+              <img
+                src="https://cdn-images.dzcdn.net/images/cover/cf155cd476feac69dd36ee65422ab7e7/250x250-000000-80-0-0.jpg"
+                class="card-img"
+                alt="album-cover"
+              />
+              <div class="card-body py-3 px-0">
+                <h5 class="card-title text-white">Hello World</h5>
+                <a href="#" class="text-secondary text-decoration-none fs-6"
+                  >Pinguini Tattici Nucleari</a
+                >
+              </div>
+            </div> -->
+          </div>
+        </article>
         <div
           class="col-md-2 col-lg-2 d-none d-sm-block bg-black text-white min-vh-100"
         >
@@ -429,5 +455,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="./script/home-album.js"></script>
   </body>
 </html>
