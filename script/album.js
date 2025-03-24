@@ -2,7 +2,7 @@ const deezerUrl = "https://striveschool-api.herokuapp.com/api/deezer"
 const search = "search"
 const album = "album"
 const artist = "artist"
-const artista1 = "queen"
+const artista1 = "eugenioinviadigioia"
 let albumID
 let albumTitle
 
