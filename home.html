@@ -10,15 +10,45 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <style>
-      #scrollspy::-webkit-scrollbar {
-        width: 1000px !important;
-      }
-      #scrollspy::-webkit-scrollbar-track {
-        background-color: #121212;
-      }
-    </style>
   </head>
+  <style>
+    .custom-scroll {
+      overflow-y: auto;
+      max-height: 300px;
+    }
+
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background-color: grey;
+    }
+
+    .custom-scroll::-webkit-scrollbar-track {
+      background-color: #000000;
+    }
+    .player-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #181818;
+      color: white;
+      padding: 10px;
+      z-index: 1050;
+    }
+    .progress-bar {
+      width: 100%;
+    }
+    .player-controls i {
+      font-size: 20px;
+      cursor: pointer;
+    }
+    body {
+      padding-bottom: 60px;
+    }
+  </style>
   <body>
     <div class="container-fluid">
       <div class="row">
@@ -166,7 +196,10 @@
               </li>
             </ul>
           </div>
-          <div class="z-1 position-sticky overflow-auto" style="height: 500px">
+          <div
+            class="z-1 position-sticky overflow-auto custom-scroll"
+            style="height: 500px"
+          >
             <div
               data-bs-spy="scroll"
               data-bs-target="#navbar-example2"
@@ -176,12 +209,6 @@
               tabindex="0"
               id="scrollspy"
             >
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-                error repudiandae dignissimos veniam consectetur! Possimus
-                quidem quaerat repellendus quam, impedit quis quos dolorum
-                perspiciatis officia, asperiores expedita! Ex, iure cumque!
-              </p>
               <h4 id="scrollspyHeading1">First heading</h4>
               <p>...</p>
               <h4 id="scrollspyHeading2">Second heading</h4>
@@ -203,39 +230,42 @@
               <h4 id="scrollspyHeading5">Fifth heading</h4>
               <p>...</p>
             </div>
-            <!-- <ul class="nav flex-column">
-              <li class="nav-item">
-                <a href="#" class="nav-link text-white"
-                  >Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Accusamus, illo quos vero modi, autem sunt earum sed vitae
-                  expedita soluta quis explicabo accusantium repellat quibusdam
-                  nam, incidunt hic consequuntur sint?</a
-                >
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link text-white"
-                  >Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Dolor, reiciendis doloribus illo illum magni rem voluptas vero
-                  a soluta explicabo cumque necessitatibus praesentium
-                  consectetur dolores libero repudiandae accusantium similique
-                  veniam!</a
-                >
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link text-white"
-                  >Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
-                  repellat, atque quis porro totam eius doloremque, tenetur
-                  consectetur accusamus dignissimos nemo rem ipsam illum ad ut
-                  vel, pariatur earum enim?</a
-                >
-              </li>
-            </ul> -->
           </div>
         </nav>
         <article class="col-md-7 col-lg-7 min-vh-100"></article>
         <div
           class="col-md-2 col-lg-2 d-none d-sm-block bg-black text-white min-vh-100"
         >
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h6 class="mb-0">Attività Amici</h6>
+            <div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-people-fill me-2"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-x-lg"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
+                />
+              </svg>
+            </div>
+          </div>
+
           <div class="container">
             <div class="card">
               <div class="card-body row bg-black text-white position-relative">
@@ -421,6 +451,38 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="player-bar d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center">
+        <img
+          src="./assets/imgs/main/image-11.jpg"
+          alt="Album Cover"
+          class="rounded me-2"
+          width="50"
+        />
+        <div>
+          <div class="fw-bold">Mercury</div>
+          <div class="text-white">Imagine Dragons</div>
+        </div>
+      </div>
+
+      <div class="player-controls text-center">
+        <i class="fas fa-step-backward mx-2"></i>
+        <i class="fas fa-play mx-2"></i>
+        <i class="fas fa-step-forward mx-2"></i>
+      </div>
+
+      <div class="d-flex align-items-center flex-grow-1 mx-3">
+        <span>0:00</span>
+        <input type="range" class="form-range mx-2 progress-bar" />
+        <span>3:45</span>
+      </div>
+
+      <div class="d-flex align-items-center">
+        <i class="fas fa-volume-down"></i>
+        <input type="range" class="form-range mx-2" style="width: 80px" />
+        <i class="fas fa-volume-up"></i>
       </div>
     </div>
 
