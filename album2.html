@@ -10,6 +10,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="/assets/custom-bootstrap.css" />
   </head>
   <body>
     <style>
@@ -233,24 +234,119 @@
                 </div>
               </div>
             </nav>
-           <!---->
-           <article class="col-md-7 col-lg-7 min-vh-100">
-             <!--Parte superiore-->
-             <div id="album-details" class="card mb-4"></div>
-             <!--Parte inferiore-->
-             <table id="track-list" class="table">
-               <thead>
-                 <tr>
-                   <th>#</th>
-                   <th>Titolo</th>
-                   <th>Riproduzioni</th>
-                   <th>Durata</th>
-                 </tr>
-               </thead>
-               <tbody></tbody>
-             </table>
-          
-        </article>
+            <!--centro-->
+            <article class="col-md-7 col-lg-7">
+                <section class="mb-3">
+                    <div class="row align-items-center gx-0">
+                      <div class="col-12 col-md-6 mb-2 mb-md-0">
+                        <div class="d-flex w-100">
+                          <button class="btn btn-secondary me-2">Bottone 1</button>
+                          <button class="btn btn-secondary">Bottone 2</button>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6 text-md-end">
+                        <select class="form-select bg-black text-light rounded-5">
+                            <option selected>Riccardo Sangermano</option>
+                            <option value="1">Pierattilio Correale</option>
+                            <option value="2">Chiara Sanasi</option>
+                            <option value="3">Pietro sorbo</option>
+                            <option value="3">Alessandro di Giannantonio</option>
+                          </select>
+                      </div>
+                    </div>
+                  </section>
+                  <!--card-->
+                <section class="mb-4" id="album-details">
+                  <div class="card bg-danger h-50">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <div id="imagealbum">
+                          <img src="https://via.placeholder.com/150" class="img-fluid rounded-start" alt="Immagine della card">
+                        </div>
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body d-flex flex-column">
+                          <p class="pt-5">Album</p>
+                          <h1 class="pb-5" id="albumtitle">Gioventu brucata</h1>
+                          <p class="pt-5" id="artist">pinguini-2007-12 brani, <span id="minutisecondi">53 min 20 sec</span> </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              
+                <section class="bg-secondary text-light py-2 border-bottom border-light">
+                  <div class="row align-items-center gx-0">
+                    <div class="col-md-6">
+                      <div class="d-flex  w-100">
+                        <button class="btn-custom3 p-2">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="30"
+                              height="30"
+                              fill="currentColor"
+                              class="bi bi-play-fill"
+                              viewBox="0 0 16 16"
+                            >
+                              <path
+                                d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"
+                              />
+                            </svg>
+                          </button>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-heart p-2" viewBox="0 0 16 16">
+                            <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+                          </svg>
+
+                         
+                          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-down-circle p-2" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z"/>
+                          </svg>
+
+                          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-three-dots p-2" viewBox="0 0 16 16">
+                            <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
+                          </svg>
+
+                      </div>
+                      <section class="bg-secondary text-light d-flex justify-content-between border-bottom border-light ">
+                        <div class="row  align-items-center"> 
+                            <div class="col-md-6 d-flex align-items-center">
+                            <p class=" pt-5">Titoli</p>
+                          </div>
+                          <div class="col-md-3 d-flex d-flex align-items-center">
+                            <p class="pt-5">Riproduzioni</p>
+                          </div>
+                          <div class="col-md-3 d-flex align-items-center justify-content-end">
+                            <p class="text-light">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+                              </svg> 1:28
+                            </p>
+                          </div>
+                        </div>
+                      </section>
+               
+              
+                <section class="bg-secondary text-light py-2 ">
+                  <div class="row align-items-center gx-0">
+                    <div class="col-md-6">
+                      <section class="d-flex align-items-center" id="artistsoundtrack-2">
+                        <span>1.</span>
+                        <div class="ps-5">
+                          <p class="mb-0">lllllllll</p>
+                          <p class="mb-0">llllllllll</p>
+                        </div>
+                      </section>
+                    </div>
+                    <div class="col-md-3" id="riproduction-2">
+                      <p>888899899</p>
+                    </div>
+                    <div class="col-md-3 text-end" id="time-2">
+                      <p>1:28</p>
+                    </div>
+                  </div>
+                </section>
+            </article>
               <!--parte destra-->
               
         <div
