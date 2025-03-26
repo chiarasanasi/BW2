@@ -103,6 +103,21 @@ $theme-colors: map-merge($theme-colors, $custom-theme-colors);
   }
 }
 
+// bottone play small
+.btn-custom5 {
+  background-color: #ffffff;
+  color: black;
+  padding: 4px 5px;
+  border: 0px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: 0.3s;
+
+  &:hover {
+    scale: 1.05;
+  }
+}
+
 // FONT FAMILY
 
 // font-1

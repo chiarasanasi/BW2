@@ -53,6 +53,19 @@
   scale: 1.05;
 }
 
+.btn-custom5 {
+  background-color: #ffffff;
+  color: black;
+  padding: 4px 5px;
+  border: 0px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.btn-custom5:hover {
+  scale: 1.05;
+}
+
 @font-face {
   font-family: "Circular Std";
   src: url("/assets/fonts/CircularStd-Regular.otf") format("opentype");
