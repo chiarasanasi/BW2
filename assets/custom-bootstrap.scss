@@ -85,6 +85,22 @@ $custom-theme-colors: (
   }
 }
 
+// bottone following
+.btn-custom4 {
+  background-color: #00000000;
+  color: white;
+  padding: 7px 26px;
+  border-width: 1px;
+  border-color: white;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.3s;
+
+  &:hover {
+    scale: 1.05;
+  }
+}
+
 $theme-colors: map-merge($theme-colors, $custom-theme-colors);
 
 @import "scss/bootstrap.scss";
