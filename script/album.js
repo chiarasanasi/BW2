@@ -81,6 +81,7 @@ const getAlbumPage = function () {
         tracklistTitle.push(song.title)
         tracklistNumber.push(i + 1)
         tracklistTime.push(formatTime(song.duration))
+        const artistTrackId = song.artist.id
 
         //riempiamo il div con id tracks
         tracce.innerHTML =
@@ -89,7 +90,7 @@ const getAlbumPage = function () {
                 <div class="col-1" >${tracklistNumber[i]}</div>
                 <div class="d-flex flex-column col-5">
                   <div class="fw-semibold">${tracklistTitle[i]}</div>
-                  <div class="text-secondary-emphasis">${artistName.innerText}</div>
+                  <a class="text-secondary-emphasis text-decoration-none" href="./artist.html?id=${artistTrackId}">${artistName.innerText}</a>
                 </div>
 
                 <div class="col-6 d-flex justify-content-end" >
