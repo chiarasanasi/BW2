@@ -11,344 +11,413 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/assets/custom-bootstrap.css" />
-  </head>
-  <body>
     <style>
-        .custom-scroll {
-          overflow-y: auto;
-          max-height: 300px;
-        }
-    
-        .custom-scroll::-webkit-scrollbar {
-          width: 6px;
-        }
-    
-        .custom-scroll::-webkit-scrollbar-thumb {
-          background-color: grey;
-        }
-    
-        .custom-scroll::-webkit-scrollbar-track {
-          background-color: #000000;
-        }
-        .player-bar {
-          position: fixed;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          background-color: #181818;
-          color: white;
-          padding: 10px;
-          z-index: 1050;
-        }
-        .progress-bar {
-          width: 100%;
-        }
-        .player-controls i {
-          font-size: 20px;
-          cursor: pointer;
-        }
-        body {
-          padding-bottom: 60px;
-        }
-      </style>
-      <body>
-        <div class="container-fluid">
-          <div class="row">
-            <nav
-              class="col-md-3 col-lg-3 d-none d-md-block bg-black text-white min-vh-100 p-3"
-            >
-              <div
-                class="sticky-top flex-grow-1 overflow-auto z-2 position-relative"
-              >
-                <ul class="nav flex-column">
-                  <li class="nav-item">
-                    <a href="#" class="nav-link text-white">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-three-dots"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"
-                        />
-                      </svg>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link text-white">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-house-door-fill"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"
-                        />
-                      </svg>
-                      Home</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link text-white">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-search"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
-                        />
-                      </svg>
-                      Cerca</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link text-white">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-music-note-list"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2"
-                        />
-                        <path fill-rule="evenodd" d="M12 3v10h-1V3z" />
-                        <path
-                          d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1z"
-                        />
-                        <path
-                          fill-rule="evenodd"
-                          d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5m0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5m0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5"
-                        />
-                      </svg>
-                      La tua libreria</a
-                    >
-                  </li>
-                  <li class="nav-item mt-3">
-                    <a href="#" class="nav-link text-white">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-plus-square-fill"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"
-                        />
-                      </svg>
-                      Crea playlist</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link text-white">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-heart-pulse-fill"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          d="M1.475 9C2.702 10.84 4.779 12.871 8 15c3.221-2.129 5.298-4.16 6.525-6H12a.5.5 0 0 1-.464-.314l-1.457-3.642-1.598 5.593a.5.5 0 0 1-.945.049L5.889 6.568l-1.473 2.21A.5.5 0 0 1 4 9z"
-                        />
-                        <path
-                          d="M.88 8C-2.427 1.68 4.41-2 7.823 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C11.59-2 18.426 1.68 15.12 8h-2.783l-1.874-4.686a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8z"
-                        />
-                      </svg>
-                      Brani che ti piacciono
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      href="#"
-                      class="nav-link text-white border-bottom border-white"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-bookmarks"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1z"
-                        />
-                        <path
-                          d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1"
-                        />
-                      </svg>
-                      I tuoi episodi</a
-                    >
-                  </li>
-                </ul>
-              </div>
-              <div
-                class="z-1 position-sticky overflow-auto custom-scroll"
-                style="height: 500px"
-              >
-                <div
-                  data-bs-spy="scroll"
-                  data-bs-target="#navbar-example2"
-                  data-bs-root-margin="0px 0px -40%"
-                  data-bs-smooth-scroll="true"
-                  class="scrollspy-example bg-black p-3 rounded-2"
-                  tabindex="0"
-                  id="scrollspy"
+      .custom-scroll {
+        overflow-y: auto;
+        max-height: 300px;
+      }
+
+      .custom-scroll::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .custom-scroll::-webkit-scrollbar-thumb {
+        background-color: grey;
+      }
+
+      .custom-scroll::-webkit-scrollbar-track {
+        background-color: #000000;
+      }
+      .player-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #181818;
+        color: white;
+        padding: 10px;
+        z-index: 1050;
+      }
+      .progress-bar {
+        width: 100%;
+      }
+      .player-controls i {
+        font-size: 20px;
+        cursor: pointer;
+      }
+      body {
+        padding-bottom: 60px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <nav
+          class="col-md-3 col-lg-3 d-none d-md-block bg-black text-white min-vh-100 p-3"
+        >
+          <div
+            class="sticky-top flex-grow-1 overflow-auto z-2 position-relative"
+          >
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a href="#" class="nav-link text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-three-dots"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-house-door-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"
+                    />
+                  </svg>
+                  Home</a
                 >
-                  <h4 id="scrollspyHeading1">First heading</h4>
-                  <p>...</p>
-                  <h4 id="scrollspyHeading2">Second heading</h4>
-                  <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Distinctio possimus autem ducimus asperiores dolor totam hic
-                    earum, doloribus temporibus voluptatibus quisquam dolorem
-                    impedit quo vitae iusto? Vitae tempore accusantium soluta.
-                  </p>
-                  <h4 id="scrollspyHeading3">Third heading</h4>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Ratione, dolorum, repudiandae cupiditate debitis, dicta quis
-                    repellendus neque voluptates ex quas laboriosam blanditiis
-                    quisquam vero libero. Explicabo impedit ad architecto nulla?
-                  </p>
-                  <h4 id="scrollspyHeading4">Fourth heading</h4>
-                  <p>...</p>
-                  <h4 id="scrollspyHeading5">Fifth heading</h4>
-                  <p>...</p>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-search"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+                    />
+                  </svg>
+                  Cerca</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-music-note-list"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2"
+                    />
+                    <path fill-rule="evenodd" d="M12 3v10h-1V3z" />
+                    <path
+                      d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1z"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5m0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5m0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5"
+                    />
+                  </svg>
+                  La tua libreria</a
+                >
+              </li>
+              <li class="nav-item mt-3">
+                <a href="#" class="nav-link text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-plus-square-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"
+                    />
+                  </svg>
+                  Crea playlist</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-heart-pulse-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M1.475 9C2.702 10.84 4.779 12.871 8 15c3.221-2.129 5.298-4.16 6.525-6H12a.5.5 0 0 1-.464-.314l-1.457-3.642-1.598 5.593a.5.5 0 0 1-.945.049L5.889 6.568l-1.473 2.21A.5.5 0 0 1 4 9z"
+                    />
+                    <path
+                      d="M.88 8C-2.427 1.68 4.41-2 7.823 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C11.59-2 18.426 1.68 15.12 8h-2.783l-1.874-4.686a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8z"
+                    />
+                  </svg>
+                  Brani che ti piacciono
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="#"
+                  class="nav-link text-white border-bottom border-white"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-bookmarks"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1z"
+                    />
+                    <path
+                      d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1"
+                    />
+                  </svg>
+                  I tuoi episodi</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div
+            class="z-1 position-sticky overflow-auto custom-scroll"
+            style="height: 500px"
+          >
+            <div
+              data-bs-spy="scroll"
+              data-bs-target="#navbar-example2"
+              data-bs-root-margin="0px 0px -40%"
+              data-bs-smooth-scroll="true"
+              class="scrollspy-example bg-black p-3 rounded-2"
+              tabindex="0"
+              id="scrollspy"
+            >
+              <h4 id="scrollspyHeading1">First heading</h4>
+              <p>...</p>
+              <h4 id="scrollspyHeading2">Second heading</h4>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Distinctio possimus autem ducimus asperiores dolor totam hic
+                earum, doloribus temporibus voluptatibus quisquam dolorem
+                impedit quo vitae iusto? Vitae tempore accusantium soluta.
+              </p>
+              <h4 id="scrollspyHeading3">Third heading</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Ratione, dolorum, repudiandae cupiditate debitis, dicta quis
+                repellendus neque voluptates ex quas laboriosam blanditiis
+                quisquam vero libero. Explicabo impedit ad architecto nulla?
+              </p>
+              <h4 id="scrollspyHeading4">Fourth heading</h4>
+              <p>...</p>
+              <h4 id="scrollspyHeading5">Fifth heading</h4>
+              <p>...</p>
+            </div>
+          </div>
+        </nav>
+        <!--centro-->
+        <article class="col col-md-6 col-lg-7">
+          <!-- Sezione 1 -->
+          <section class="mb-3">
+            <div class="row align-items-center gx-0">
+              <div class="col-12 col-md-6 mb-2 mb-md-0">
+                <div class="d-flex w-100">
+                  <button class="btn btn-secondary rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 50px; height: 50px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-caret-left " viewBox="0 0 16 16">
+                      <path d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753"/>
+                    </svg></button>
+                    
+                    <button class="btn btn-secondary rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-caret-right " viewBox="0 0 16 16">
+                        <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
+                      </svg></button>
                 </div>
               </div>
-            </nav>
-            <!--centro-->
-            <article class="col-md-7 col-lg-7">
-                <section class="mb-3">
-                    <div class="row align-items-center gx-0">
-                      <div class="col-12 col-md-6 mb-2 mb-md-0">
-                        <div class="d-flex w-100">
-                          <button class="btn btn-secondary me-2">Bottone 1</button>
-                          <button class="btn btn-secondary">Bottone 2</button>
-                        </div>
-                      </div>
-                      <div class="col-12 col-md-6 text-md-end">
-                        <select class="form-select bg-black text-light rounded-5">
-                            <option selected>Riccardo Sangermano</option>
-                            <option value="1">Pierattilio Correale</option>
-                            <option value="2">Chiara Sanasi</option>
-                            <option value="3">Pietro sorbo</option>
-                            <option value="3">Alessandro di Giannantonio</option>
-                          </select>
-                      </div>
-                    </div>
-                  </section>
-                  <!--card-->
-                <section class="mb-4" id="album-details">
-                  <div class="card bg-danger h-50">
-                    <div class="row g-0">
-                      <div class="col-md-4">
-                        <div id="imagealbum">
-                          <img src="https://via.placeholder.com/150" class="img-fluid rounded-start" alt="Immagine della card">
-                        </div>
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body d-flex flex-column">
-                          <p class="pt-5">Album</p>
-                          <h1 class="pb-5" id="albumtitle">Gioventu brucata</h1>
-                          <p class="pt-5" id="artist">pinguini-2007-12 brani, <span id="minutisecondi">53 min 20 sec</span> </p>
-                        </div>
-                      </div>
-                    </div>
+              <div class="col-12 col-md-6 text-md-end">
+                <select class="form-select bg-black text-light rounded-5">
+                  <option selected>Riccardo Sangermano</option>
+                  <option value="1">Pierattilio Correale</option>
+                  <option value="2">Chiara Sanasi</option>
+                  <option value="3">Pietro sorbo</option>
+                  <option value="3">Alessandro di Giannantonio</option>
+                </select>
+              </div>
+            </div>
+          </section>
+
+          <!-- Card Section -->
+          <section class="mb-4" id="album-details">
+            <div class="card bg-danger h-50">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <div id="imagealbum">
+                    <img
+                      src="https://via.placeholder.com/150"
+                      class="img-fluid rounded-start"
+                      alt="Immagine della card"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body d-flex flex-column">
+                    <p class="pt-5">Album</p>
+                    <h1 class="pb-5" id="albumtitle">Gioventu brucata</h1>
+                    <p class="pt-5" id="artist">
+                      pinguini-2007-12 brani,
+                      <span id="minutisecondi">53 min 20 sec</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Sezione in basso -->
+          <section
+            class="bg-secondary text-light py-2 border-bottom border-light"
+          >
+            <div class="row align-items-center gx-0">
+              <div class="col-md-6 align-items-center">
+                <div class="d-flex w-100">
+                  <button class="btn-custom3 p-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      fill="currentColor"
+                      class="bi bi-play-fill"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"
+                      />
+                    </svg>
+                  </button>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    fill="currentColor"
+                    class="bi bi-heart p-2"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"
+                    />
+                  </svg>
+
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    fill="currentColor"
+                    class="bi bi-arrow-down-circle p-2"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z"
+                    />
+                  </svg>
+
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    fill="currentColor"
+                    class="bi bi-three-dots me-2"
+                    viewBox="0 0 16 16"
+                    
+                  >
+                    <path
+                      d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"
+                    />
+                    
+                  </svg>
+                </div>
+              </div>
+              <!--colonna-->
+              <section
+  class="bg-secondary text-light py-2 border-bottom border-light"
+>
+  <div class="row align-items-center gx-0">
+    <div class="col-md-6 d-flex align-items-center">
+      <div class="d-flex align-items-center w-100">
+        <p class="mb-0">Titoli</p>
+      </div>
+    </div>
+    <div class="col-md-3 d-flex align-items-center">
+      <p class="mb-0">Riproduzioni</p>
+    </div>
+    <div class="col-md-3 text-end ">
+      <p class="text-light mb-0">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-clock  pl-4"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"
+          />
+          <path
+            d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"
+          />
+        </svg>
+        
+      </p>
+    </div>
+  </div>
+</section>
+
+          <!-- Esempio di traccia -->
+          <section class="bg-secondary text-light py-2">
+            <div class="row align-items-center gx-0">
+              <div class="col-md-6">
+                <section
+                  class="d-flex align-items-center"
+                  id="artistsoundtrack-2"
+                >
+                  <span>1.</span>
+                  <div class="ps-5">
+                    <p class="mb-0">lllllllll</p>
+                    <p class="mb-0">llllllllll</p>
                   </div>
                 </section>
-              
-                <section class="bg-secondary text-light py-2 border-bottom border-light">
-                  <div class="row align-items-center gx-0">
-                    <div class="col-md-6">
-                      <div class="d-flex  w-100">
-                        <button class="btn-custom3 p-2">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="30"
-                              height="30"
-                              fill="currentColor"
-                              class="bi bi-play-fill"
-                              viewBox="0 0 16 16"
-                            >
-                              <path
-                                d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"
-                              />
-                            </svg>
-                          </button>
-                          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-heart p-2" viewBox="0 0 16 16">
-                            <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
-                          </svg>
+              </div>
+              <div class="col-md-3" id="riproduction-2">
+                <p>888899899</p>
+              </div>
+              <div class="col-md-3 text-end" id="time-2">
+                <p>1:28</p>
+              </div>
+            </div>
+          </section>
+        </article>
+        <!-- Chiusura dell'elemento article -->
+        <!--parte destra-->
 
-                         
-                          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-down-circle p-2" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z"/>
-                          </svg>
-
-                          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-three-dots p-2" viewBox="0 0 16 16">
-                            <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
-                          </svg>
-
-                      </div>
-                      <section class="bg-secondary text-light d-flex justify-content-between border-bottom border-light ">
-                        <div class="row  align-items-center"> 
-                            <div class="col-md-6 d-flex align-items-center">
-                            <p class=" pt-5">Titoli</p>
-                          </div>
-                          <div class="col-md-3 d-flex d-flex align-items-center">
-                            <p class="pt-5">Riproduzioni</p>
-                          </div>
-                          <div class="col-md-3 d-flex align-items-center justify-content-end">
-                            <p class="text-light">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
-                                <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
-                                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
-                              </svg> 1:28
-                            </p>
-                          </div>
-                        </div>
-                      </section>
-               
-              
-                <section class="bg-secondary text-light py-2 ">
-                  <div class="row align-items-center gx-0">
-                    <div class="col-md-6">
-                      <section class="d-flex align-items-center" id="artistsoundtrack-2">
-                        <span>1.</span>
-                        <div class="ps-5">
-                          <p class="mb-0">lllllllll</p>
-                          <p class="mb-0">llllllllll</p>
-                        </div>
-                      </section>
-                    </div>
-                    <div class="col-md-3" id="riproduction-2">
-                      <p>888899899</p>
-                    </div>
-                    <div class="col-md-3 text-end" id="time-2">
-                      <p>1:28</p>
-                    </div>
-                  </div>
-                </section>
-            </article>
-              <!--parte destra-->
-              
         <div
           class="col-md-2 col-lg-2 d-none d-sm-block bg-black text-white min-vh-100"
         >
@@ -551,18 +620,25 @@
                         d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"
                       />
                     </svg>
-
                     <p class="m-0 ml-2" style="font-size: 7px">
                       Hotline bling - Drake
                     </p>
                   </div>
                 </div>
+              </div>
+              <!-- Chiusura per card-body -->
             </div>
-    
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
+            <!-- Chiusura per card -->
+          </div>
+          <!-- Chiusura per container -->
+
+          <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"
+          ></script>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
