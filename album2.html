@@ -220,9 +220,9 @@
           </div>
         </nav>
         <!--centro-->
-        <article class="col-md-7 col-lg-7 col-12">
+        <article class="col-md-7 col-lg-7 col-12" id="album-details">
           <!-- Card Section -->
-          <section class="mb-4" id="album-details">
+          <section class="mb-4">
             <!-- Sezione 1 -->
             <section class="mb-3">
               <div class="d-flex justify-content-between">
@@ -244,113 +244,75 @@
               </div>
             </section>
             <div>
-              <div class="d-flex align-items-end flex-column flex-md-row">
-                <div class="col-md-3">
+              <div
+                class="d-flex align-items-md-end align-items-start flex-column flex-md-row"
+              >
+                <div class="col-md-5 col-lg-4 col-12">
                   <img
                     src=""
                     class="img-fluid w-100"
                     alt="Immagine della card"
                     id="cover-album"
+                    crossorigin="anonymous"
                   />
                 </div>
-                <div class="col-md-9 px-3 px-lg-4">
+                <div class="col-md-7 col-lg-8 px-3 px-lg-4">
                   <div class="card-body d-flex flex-column">
                     <p class="text-white fs-10">ALBUM</p>
                     <h1
-                      class="text-white display-2 fw-semibold"
+                      class="text-white display-6 fw-semibold"
                       id="album-title"
                     ></h1>
-                    <p class="text-white" id="artist">
+                    <a class="text-white text-decoration-none" id="artist">
                       <span id="time" class="text-white"></span>
-                    </p>
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
           </section>
 
-          <!-- Sezione in basso -->
-          <section
-            class="bg-secondary text-light py-2 border-bottom border-light"
-          >
-            <div class="row align-items-center gx-0">
-              <div class="col-md-6">
-                <div class="d-flex w-100">
-                  <button class="btn-custom3 p-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="30"
-                      height="30"
-                      fill="currentColor"
-                      class="bi bi-play-fill"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"
-                      />
-                    </svg>
-                  </button>
-                  <!-- Altri SVG qui -->
-                </div>
-              </div>
-              <section
-                class="bg-secondary text-light d-flex justify-content-between border-bottom border-light"
-              >
-                <div class="row align-items-center">
-                  <div class="col-md-6 d-flex align-items-center">
-                    <p class="pt-5">Titoli</p>
-                  </div>
-                  <div class="col-md-3 d-flex align-items-center">
-                    <p class="pt-5">Riproduzioni</p>
-                  </div>
-                  <div
-                    class="col-md-3 d-flex align-items-center justify-content-end"
+          <!-- cosa c'è nella sezione tracce album  -->
+
+          <section class="text-light py-2 border-bottom border-1 border-light">
+            <div class="container">
+              <div class="row">
+                <div class="col-1" id="numero-traccia">#</div>
+                <div class="col-2 fw-semibold" id="titolo-traccia">Titolo</div>
+                <div class="col-9 d-flex justify-content-end" id="time-traccia">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-clock"
+                    viewBox="0 0 16 16"
                   >
-                    <p class="text-light">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-clock"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"
-                        />
-                        <path
-                          d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"
-                        />
-                      </svg>
-                      1:28
-                    </p>
-                  </div>
+                    <path
+                      d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"
+                    />
+                    <path
+                      d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"
+                    />
+                  </svg>
                 </div>
-              </section>
+              </div>
             </div>
           </section>
+          <!-- tracce album-->
+          <section class="text-light py-2">
+            <div class="container" id="tracks">
+              <!-- QUESTA PARTE LA CREO IN ALBUM.JS -->
+              <!-- <div class="row align-content-center">
+                <div class="col-1" id="numero-traccia">1</div>
+                <div class="d-flex flex-column col-2">
+                  <div class="fw-semibold" id="titolo-traccia">titolo</div>
+                  <div id="artist-name">artista</div>
+                </div>
 
-          <!-- Esempio di traccia -->
-          <section class="bg-secondary text-light py-2">
-            <div class="row align-items-center gx-0">
-              <div class="col-md-6">
-                <section
-                  class="d-flex align-items-center"
-                  id="artistsoundtrack-2"
-                >
-                  <span>1.</span>
-                  <div class="ps-5">
-                    <p class="mb-0">lllllllll</p>
-                    <p class="mb-0">llllllllll</p>
-                  </div>
-                </section>
-              </div>
-              <div class="col-md-3" id="riproduction-2">
-                <p>888899899</p>
-              </div>
-              <div class="col-md-3 text-end" id="time-2">
-                <p>1:28</p>
-              </div>
+                <div class="col-9 d-flex justify-content-end" id="time-traccia">
+                  3
+                </div> -->
             </div>
           </section>
         </article>
@@ -551,7 +513,7 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script src="https://cdn.jsdelivr.net/npm/color-thief@2.3.0/dist/color-thief.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.2/color-thief.umd.js"></script>
 
     <script src="./script/album.js"></script>
   </body>

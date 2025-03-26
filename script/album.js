@@ -1,4 +1,3 @@
-
 const deezerUrl = "https://striveschool-api.herokuapp.com/api/deezer"
 const album = "album"
 
@@ -9,26 +8,6 @@ if (!albumId) {
   console.log("ID dell'album mancante nell'URL")
 } else {
   console.log("ID ALBUM", albumId)
-}
-
-//FUNZIONE PER CALCOLARE LA MEDIA DEI COLORI DELLA COVER DELL'ALBUM
-const getColorBg = function (albumCover, albumTitle) {
-  // const colorThief = new ColorThief()
-  console.log(albumCover)
-  // if (albumCover.complete) {
-  //   const dominantColor = colorThief.getColor(albumCover)
-  //   console.log(
-  //     `QUESTO E' IL COLORE PREDOMINANTE DELLA COVER DELL'ALBUM ${albumTitle} -->${dominantColor}`
-  //   )
-  //   // Puoi usare il colore per cambiare lo sfondo o fare altre cose
-  // } else {
-  //   albumCover.addEventListener("load", function () {
-  //     const dominantColor = colorThief.getColor(albumCover)
-  //     console.log(
-  //       `QUESTO E' IL COLORE PREDOMINANTE DELLA COVER DELL'ALBUM ${albumTitle} -->${dominantColor}`
-  //     )
-  //   })
-  // }
 }
 
 const getAlbumPage = function () {
@@ -43,23 +22,86 @@ const getAlbumPage = function () {
     .then((data) => {
       console.log("DATI DELL'ALBUM", data)
 
-      //identifichiamo elementi dell'HTML
+      //identifichiamo elementi dell'HTML della parte alta della pagina
       const albumTitle = document.getElementById("album-title")
       const artistName = document.getElementById("artist")
+      const artistId = data.artist.id
+      console.log("ARTISTI ID -->", artistId)
+
+      artistName.setAttribute("href", `./artist.html?id=${artistId}`)
       const albumCover = document.getElementById("cover-album")
       const albumTime = document.getElementById("time")
-
-      //mettere la media del colore della cover dell'album come bg
-      //viene usato COLOR-THIEF una libreria che ho messo negli script in fondo al body del file album2.html
 
       albumTitle.innerText = data.title
       artistName.innerText = data.artist.name
       albumCover.setAttribute("src", data.cover_medium)
       albumTime.innerText = data.duration + " min"
+
+      //FUNZIONE PER CALCOLARE LA MEDIA DEI COLORI DELLA COVER DELL'ALBUM
+
+      //con il getColor si prende il colore più preponderante
+      //con il getPalette ti ridà un array con una palette di tot colori. io ho pre
+      const getColorBg = function () {
+        const colorBox = document.getElementById("album-details")
+
+        const colorThief = new ColorThief()
+        if (albumCover.complete) {
+          setColor()
+        } else {
+          albumCover.addEventListener("load", setColor)
+        }
+
+        function setColor() {
+          const dominantColor = colorThief.getPalette(albumCover)
+          console.log("DOMINANT COLOR -->", dominantColor)
+
+          const color = dominantColor[2] // Primo colore dominante
+          colorBox.style.background = `linear-gradient(0deg, rgba(23, 23, 23,1) 65%, rgba(${color[0]},${color[1]},${color[2]},1) 100%)`
+        }
+      }
       getColorBg()
+
+      //identifichiamo elementi dell'HTML della lista di brani
+      const tracce = document.getElementById("tracks")
+
+      const tracklistTitle = [] //tracklist vuota
+      const tracklistNumber = []
+      const tracklistTime = []
+      console.log("TRACKLIST VUOTA -->", tracklistTitle)
+      console.log("TRACKLISTNUMBERS VUOTA -->", tracklistNumber)
+      console.log("TRACKLISTTIME VUOTA -->", tracklistTime)
+
+      const formatTime = (seconds) => {
+        const minutes = Math.floor(seconds / 60)
+        const remainingSeconds = seconds % 60
+        return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`
+      }
+
+      data.tracks.data.forEach((song, i) => {
+        tracklistTitle.push(song.title)
+        tracklistNumber.push(i + 1)
+        tracklistTime.push(formatTime(song.duration))
+
+        //riempiamo il div con id tracks
+        tracce.innerHTML =
+          tracce.innerHTML +
+          `<div class="row align-content-center my-3">
+                <div class="col-1" >${tracklistNumber[i]}</div>
+                <div class="d-flex flex-column col-5">
+                  <div class="fw-semibold">${tracklistTitle[i]}</div>
+                  <div class="text-secondary-emphasis">${artistName.innerText}</div>
+                </div>
+
+                <div class="col-6 d-flex justify-content-end" >
+                  ${tracklistTime[i]}
+                </div>`
+      })
+      console.log("TRACKLIST PIENA -->", tracklistTitle) //tracklist piena
+      console.log("TRACKLISTNUMBERS PIENA -->", tracklistNumber) //tracklist piena
+      console.log("TRACKLISTTIME PIENA -->", tracklistTime) //tracklist piena
     })
     .catch((err) => {
-      console.log("ERRORE NEL RECUPERO DATI CONCERTO", err)
+      console.log("ERRORE NEL RECUPERO DATI ALBUM", err)
     })
 }
 getAlbumPage()

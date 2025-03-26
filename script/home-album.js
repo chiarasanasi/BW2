@@ -1,7 +1,7 @@
 const deezerUrl = "https://striveschool-api.herokuapp.com/api/deezer"
 const search = "search"
 
-const artisti = ["pinguini"]
+const artisti = ["pinguini", "queen", "angelinamango", "gorillaz", "beatles"]
 
 const getAlbumCard = function () {
   artisti.forEach((artista) => {
@@ -37,7 +37,7 @@ const getAlbumCard = function () {
 
         const albumHome = document.getElementById("album-home")
         const cardAlbum = document.createElement("div")
-        cardAlbum.classList.add("card", "border-0", "p-3", "w-50")
+        cardAlbum.classList.add("card", "border-0", "p-3", "w-50", "col-3")
         cardAlbum.innerHTML = `
         <img
                 src="${albumCover}"
