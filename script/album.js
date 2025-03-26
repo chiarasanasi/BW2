@@ -1,63 +1,65 @@
-const deezerUrl = "https://striveschool-api.herokuapp.com/api/deezer"
-const search = "search"
-const album = "album"
-const artist = "artist"
-const artista1 = "eugenioinviadigioia"
-let albumID
-let albumTitle
 
-const getAlbumID = function () {
-  fetch(deezerUrl + "/" + search + "?q=" + artista1)
+const deezerUrl = "https://striveschool-api.herokuapp.com/api/deezer"
+const album = "album"
+
+const URLparameters = new URLSearchParams(location.search)
+const albumId = URLparameters.get("id")
+
+if (!albumId) {
+  console.log("ID dell'album mancante nell'URL")
+} else {
+  console.log("ID ALBUM", albumId)
+}
+
+//FUNZIONE PER CALCOLARE LA MEDIA DEI COLORI DELLA COVER DELL'ALBUM
+const getColorBg = function (albumCover, albumTitle) {
+  // const colorThief = new ColorThief()
+  console.log(albumCover)
+  // if (albumCover.complete) {
+  //   const dominantColor = colorThief.getColor(albumCover)
+  //   console.log(
+  //     `QUESTO E' IL COLORE PREDOMINANTE DELLA COVER DELL'ALBUM ${albumTitle} -->${dominantColor}`
+  //   )
+  //   // Puoi usare il colore per cambiare lo sfondo o fare altre cose
+  // } else {
+  //   albumCover.addEventListener("load", function () {
+  //     const dominantColor = colorThief.getColor(albumCover)
+  //     console.log(
+  //       `QUESTO E' IL COLORE PREDOMINANTE DELLA COVER DELL'ALBUM ${albumTitle} -->${dominantColor}`
+  //     )
+  //   })
+  // }
+}
+
+const getAlbumPage = function () {
+  fetch(deezerUrl + "/" + album + "/" + albumId)
     .then((response) => {
       if (response.ok) {
         return response.json()
       } else {
-        throw new Error("La RESPONSE non è valida")
+        throw new Error("Errore nel recupero dell'album")
       }
     })
     .then((data) => {
-      console.log("DATA", data)
+      console.log("DATI DELL'ALBUM", data)
 
-      //prendo un numero randomi da 0 a 25 perchè ho notato che gli array delle canzoni sono sempre da 25, e per non prendere sempre la prima pensavo di prendere in maniera randomica così da rendere il  tutto più dinamico
+      //identifichiamo elementi dell'HTML
+      const albumTitle = document.getElementById("album-title")
+      const artistName = document.getElementById("artist")
+      const albumCover = document.getElementById("cover-album")
+      const albumTime = document.getElementById("time")
 
-      const randomTrackIndex = Math.floor(Math.random() * 25)
-      albumID = data.data[randomTrackIndex].album.id
-      albumTitle = data.data[randomTrackIndex].album.title
+      //mettere la media del colore della cover dell'album come bg
+      //viene usato COLOR-THIEF una libreria che ho messo negli script in fondo al body del file album2.html
 
-      console.log("album ID e title", albumID, albumTitle)
-      return albumID, albumTitle
+      albumTitle.innerText = data.title
+      artistName.innerText = data.artist.name
+      albumCover.setAttribute("src", data.cover_medium)
+      albumTime.innerText = data.duration + " min"
+      getColorBg()
     })
-
     .catch((err) => {
-      console.log("Errore", err)
+      console.log("ERRORE NEL RECUPERO DATI CONCERTO", err)
     })
 }
-getAlbumID()
-
-setTimeout(() => {
-  const createAlbumPage = function () {
-    fetch(deezerUrl + "/" + album + "/" + albumID)
-      .then((response) => {
-        if (response.ok) {
-          return response.json()
-        } else {
-          throw new Error("Errore nella response della tracklistAlbum")
-        }
-      })
-      .then((data) => {
-        console.log(
-          "Queste sono tutte le canzoni presenti nell'album " +
-            albumTitle +
-            " con ID " +
-            albumID
-        )
-        data.tracks.data.forEach((song) => {
-          console.log(song.title)
-        })
-      })
-      .catch((err) => {
-        console.log("Errore", err)
-      })
-  }
-  createAlbumPage()
-}, 1000)
+getAlbumPage()
