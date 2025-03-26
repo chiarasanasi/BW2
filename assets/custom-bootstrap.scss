@@ -36,6 +36,8 @@ $custom-theme-colors: (
   "dark2": #000000,
 );
 
+$theme-colors: map-merge($theme-colors, $custom-theme-colors);
+
 // BUTTONS
 // custom-buttons
 
@@ -101,6 +103,168 @@ $custom-theme-colors: (
   }
 }
 
-$theme-colors: map-merge($theme-colors, $custom-theme-colors);
+// FONT FAMILY
+
+// font-1
+@font-face {
+  font-family: "Circular Std";
+  src: url("/assets/fonts/CircularStd-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+// font-2
+@font-face {
+  font-family: "Circular Std";
+  src: url("/assets/fonts/CircularStd-RegularItalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+// font-3
+@font-face {
+  font-family: "Circular Std";
+  src: url("/assets/fonts/CircularStd-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+// font-4
+@font-face {
+  font-family: "Circular Std";
+  src: url("/assets/fonts/CircularStd-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+// font-5
+@font-face {
+  font-family: "Circular Std";
+  src: url("/assets/fonts/CircularStd-Book.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+// font-6
+@font-face {
+  font-family: "Circular Std";
+  src: url("/assets/fonts/CircularStd-BoldItalic.otf");
+  font-weight: 300;
+  font-style: italic;
+}
+
+// font-7
+@font-face {
+  font-family: "Circular Std";
+  src: url("/assets/fonts/CircularStd-Light.otf");
+  font-weight: 200;
+  font-style: normal;
+}
+
+// font-8
+@font-face {
+  font-family: "Circular Std";
+  src: url("/assets/fonts/CircularStd-LightItalic.otf");
+  font-weight: 200;
+  font-style: italic;
+}
+
+// font-9
+@font-face {
+  font-family: "Circular Std";
+  src: url("/assets/fonts/CircularStd-Medium.otf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+// font-10
+@font-face {
+  font-family: "Circular Std";
+  src: url("/assets/fonts/CircularStd-MediumItalic.otf");
+  font-weight: 500;
+  font-style: italic;
+}
+
+// --------
+
+// Normal
+.font-1 {
+  font-family: "Circular Std", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #333;
+}
+
+// Italic
+.font-2 {
+  font-family: "Circular Std", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  color: #333;
+}
+
+// Bold
+.font-3 {
+  font-family: "Circular Std", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  color: #333;
+}
+
+// Bold Italic
+.font-4 {
+  font-family: "Circular Std", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  color: #333;
+}
+
+// Book Regular
+.font-5 {
+  font-family: "Circular Std", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: #333;
+}
+
+// Book Italic
+.font-6 {
+  font-family: "Circular Std", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  color: #333;
+}
+
+// Light
+.font-7 {
+  font-family: "Circular Std", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  color: #333;
+}
+
+// Light Italic
+.font-8 {
+  font-family: "Circular Std", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+  color: #333;
+}
+
+// Medium
+.font-9 {
+  font-family: "Circular Std", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: #333;
+}
+
+// Medium Italic
+.font-10 {
+  font-family: "Circular Std", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+  color: #333;
+}
 
 @import "scss/bootstrap.scss";
