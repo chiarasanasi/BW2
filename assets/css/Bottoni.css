@@ -1,8 +1,8 @@
 
-.btn {
+.my-button  {
   display: inline-block; 
   border: 1px solid #ccc;
-  background-color: #333333a7; 
+  background-color: #33333396; 
   color: #ece1e1; 
   text-decoration: none; 
   cursor: pointer; 
@@ -10,14 +10,14 @@
   
 }
 
-.btn:hover {
+.my-button:hover {
   background-color:  black;
   
 }
 
-.btn svg {
-    width: 60px; 
-    height: 60px; 
+.my-button  svg {
+    width: 40px; 
+    height: 40px; 
     transition: transform 0.3s ease; 
 }
 
@@ -69,5 +69,5 @@
   }
 
   .bi-heart, .bi-arrow-down-circle, .bi-three-dots {
-    margin-left: 0.3rem; /* Aggiungi uno spazio lieve a sinistra */
+    margin-left: 0.3rem; 
   }
