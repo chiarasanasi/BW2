@@ -5,9 +5,214 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Spotify</title>
     <link rel="stylesheet" href="./assets/custom-bootstrap.css" />
+
+    <!-- stile per la PLAY BAR -->
+    <style>
+      .rotate-90 {
+        transform: rotate(90deg);
+      }
+    </style>
   </head>
   <body class="bg-dark">
-    <div class="container-fluid">
+    <!-- DESKTOP PLAYER -->
+    <div
+      id="nav-player"
+      class="player-bar d-flex justify-content-between align-items-center text-white bg-dark2 p-2 user-select-none col-12 fixed-bottom z-2 d-none"
+    >
+      <div class="d-flex align-items-center me-5">
+        <img
+          id="albumcover-playnav"
+          alt="Album Cover"
+          class="rounded me-2"
+          width="50"
+        />
+        <div>
+          <div class="fw-bold">
+            <span id="songTitle-playnav">Mercury</span>
+          </div>
+          <div class="text-white">
+            <span id="artistname-playnav"> Imagine Dragons </span>
+          </div>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-heart ms-3"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"
+          />
+        </svg>
+      </div>
+
+      <section class="w-50 text-center">
+        <!-- Shuffle -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-shuffle me-3"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.6 9.6 0 0 0 7.556 8a9.6 9.6 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.6 10.6 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.6 9.6 0 0 0 6.444 8a9.6 9.6 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5"
+          />
+          <path
+            d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192m0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192"
+          />
+        </svg>
+
+        <!-- Skip start -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="25"
+          height="25"
+          fill="currentColor"
+          class="bi bi-skip-start-fill me-3"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M4 4a.5.5 0 0 1 1 0v3.248l6.267-3.636c.54-.313 1.232.066 1.232.696v7.384c0 .63-.692 1.01-1.232.697L5 8.753V12a.5.5 0 0 1-1 0z"
+          />
+        </svg>
+        <!-- play button -->
+        <button class="btn-custom5 mb-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            fill="currentColor"
+            class="bi bi-play-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"
+            />
+          </svg>
+        </button>
+
+        <!-- Skip end -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="25"
+          height="25"
+          fill="currentColor"
+          class="bi bi-skip-end-fill ms-3"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M12.5 4a.5.5 0 0 0-1 0v3.248L5.233 3.612C4.693 3.3 4 3.678 4 4.308v7.384c0 .63.692 1.01 1.233.697L11.5 8.753V12a.5.5 0 0 0 1 0z"
+          />
+        </svg>
+
+        <!-- Loop -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-repeat ms-3"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M11 5.466V4H5a4 4 0 0 0-3.584 5.777.5.5 0 1 1-.896.446A5 5 0 0 1 5 3h6V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192m3.81.086a.5.5 0 0 1 .67.225A5 5 0 0 1 11 13H5v1.466a.25.25 0 0 1-.41.192l-2.36-1.966a.25.25 0 0 1 0-.384l2.36-1.966a.25.25 0 0 1 .41.192V12h6a4 4 0 0 0 3.585-5.777.5.5 0 0 1 .225-.67Z"
+          />
+        </svg>
+
+        <div id="player" class="d-flex align-items-center flex-grow-1 mx-3">
+          <span id="current-time">0:00</span>
+          <input
+            type="range"
+            class="form-range mx-2 progress-bar"
+            id="progressbar"
+          />
+          <audio controls id="audio-player" style="height: 50px" class="d-none">
+            <source type="audio/mpeg" />
+          </audio>
+          <span id="duration-time">3:45</span>
+        </div>
+      </section>
+
+      <!-- Volume -->
+      <section class="d-flex align-items-center justify-content-center">
+        <!-- Queue -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-view-list me-3"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M3 4.5h10a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2m0 1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1zM1 2a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 2m0 12a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 14"
+          />
+        </svg>
+        <!-- dispositivi -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="15"
+          height="15"
+          fill="currentColor"
+          class="bi bi-pc-display me-3"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8 1a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1zm1 13.5a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0m2 0a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0M9.5 1a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zM9 3.5a.5.5 0 0 0 .5.5h5a.5.5 0 0 0 0-1h-5a.5.5 0 0 0-.5.5M1.5 2A1.5 1.5 0 0 0 0 3.5v7A1.5 1.5 0 0 0 1.5 12H6v2h-.5a.5.5 0 0 0 0 1H7v-4H1.5a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5H7V2z"
+          />
+        </svg>
+
+        <!-- Volume icon -->
+        <div class="d-flex flex-column-reverse flex-md-row">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            fill="currentColor"
+            class="bi bi-volume-down"
+            viewBox="0 0 16 16"
+            id="volume"
+          >
+            <path
+              d="M9 4a.5.5 0 0 0-.812-.39L5.825 5.5H3.5A.5.5 0 0 0 3 6v4a.5.5 0 0 0 .5.5h2.325l2.363 1.89A.5.5 0 0 0 9 12zM6.312 6.39 8 5.04v5.92L6.312 9.61A.5.5 0 0 0 6 9.5H4v-3h2a.5.5 0 0 0 .312-.11M12.025 8a4.5 4.5 0 0 1-1.318 3.182L10 10.475A3.5 3.5 0 0 0 11.025 8 3.5 3.5 0 0 0 10 5.525l.707-.707A4.5 4.5 0 0 1 12.025 8"
+            />
+          </svg>
+
+          <div class="d-flex align-items-center">
+            <i class="fas fa-volume-down"></i>
+            <input
+              id="volume-slider"
+              type="range"
+              class="form-range mx-2"
+              style="width: 80px"
+            />
+            <i class="fas fa-volume-up"></i>
+          </div>
+        </div>
+        <!-- full screen icon -->
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="13"
+          height="13"
+          fill="currentColor"
+          class="bi bi-arrows-angle-expand ms-2"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707m4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707"
+          />
+        </svg>
+      </section>
+    </div>
+
+    <div class="container-fluid" style="padding-bottom: 100px">
       <div class="row">
         <nav
           class="col-md-3 col-lg-3 d-none d-md-block bg-black text-white min-vh-100 p-3"
@@ -545,5 +750,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.2/color-thief.umd.js"></script>
 
     <script src="./script/album.js"></script>
+    <script src="./script/nav-bar.js"></script>
   </body>
 </html>
