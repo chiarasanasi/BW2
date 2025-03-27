@@ -1,0 +1,285 @@
+@import "scss/functions";
+@import "scss/variables";
+
+// FONTS
+$extra-font-sizes: (
+  // 80px
+  0: 5rem,
+  // 14px
+  7: 0.875rem,
+  //  12px
+  8: 0.75rem,
+  // 10px
+  9: 0.625rem,
+  //  8px
+  10: 0.5rem
+);
+
+$font-sizes: map-merge($font-sizes, $extra-font-sizes);
+
+// WIDTH
+$extra-border-width: (
+  6: 6px,
+  7: 7px,
+  8: 8px,
+  9: 9px,
+  10: 10px,
+);
+
+$border-widths: map-merge($border-widths, $extra-border-width);
+
+// COLORS
+$custom-theme-colors: (
+  "primary": #1ed760,
+  "secondary": #2c2c2c,
+  "dark": #171717,
+  "dark2": #000000,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-theme-colors);
+
+// BUTTONS
+// custom-buttons
+
+// bottone verde
+.btn-custom {
+  background-color: #1ed760;
+  color: black;
+  padding: 15px 32px;
+  border: 0px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: 0.3s;
+
+  &:hover {
+    scale: 1.05;
+  }
+}
+
+// bottone nero
+.btn-custom2 {
+  background-color: black;
+  color: white;
+  padding: 15px 32px;
+  border: 2px;
+  border-color: white;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: 0.3s;
+
+  &:hover {
+    scale: 1.05;
+  }
+}
+
+// bottone play
+.btn-custom3 {
+  background-color: #1ed760;
+  color: black;
+  padding: 15px 15px;
+  border: 0px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: 0.3s;
+
+  &:hover {
+    scale: 1.05;
+  }
+}
+
+// bottone following
+.btn-custom4 {
+  background-color: #00000000;
+  color: white;
+  padding: 7px 26px;
+  border-width: 1px;
+  border-color: white;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.3s;
+
+  &:hover {
+    scale: 1.05;
+  }
+}
+
+// bottone play small
+.btn-custom5 {
+  background-color: #ffffff;
+  color: black;
+  padding: 4px 5px;
+  border: 0px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: 0.3s;
+
+  &:hover {
+    scale: 1.05;
+  }
+}
+
+// FONT FAMILY
+
+// font-1
+@font-face {
+  font-family: "Circular Std";
+  src: url("/assets/fonts/CircularStd-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+// font-2
+@font-face {
+  font-family: "Circular Std";
+  src: url("/assets/fonts/CircularStd-RegularItalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+// font-3
+@font-face {
+  font-family: "Circular Std";
+  src: url("/assets/fonts/CircularStd-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+// font-4
+@font-face {
+  font-family: "Circular Std";
+  src: url("/assets/fonts/CircularStd-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+// font-5
+@font-face {
+  font-family: "Circular Std";
+  src: url("/assets/fonts/CircularStd-Book.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+// font-6
+@font-face {
+  font-family: "Circular Std";
+  src: url("/assets/fonts/CircularStd-BoldItalic.otf");
+  font-weight: 300;
+  font-style: italic;
+}
+
+// font-7
+@font-face {
+  font-family: "Circular Std";
+  src: url("/assets/fonts/CircularStd-Light.otf");
+  font-weight: 200;
+  font-style: normal;
+}
+
+// font-8
+@font-face {
+  font-family: "Circular Std";
+  src: url("/assets/fonts/CircularStd-LightItalic.otf");
+  font-weight: 200;
+  font-style: italic;
+}
+
+// font-9
+@font-face {
+  font-family: "Circular Std";
+  src: url("/assets/fonts/CircularStd-Medium.otf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+// font-10
+@font-face {
+  font-family: "Circular Std";
+  src: url("/assets/fonts/CircularStd-MediumItalic.otf");
+  font-weight: 500;
+  font-style: italic;
+}
+
+// --------
+
+// Normal
+.font-1 {
+  font-family: "Circular Std", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #333;
+}
+
+// Italic
+.font-2 {
+  font-family: "Circular Std", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  color: #333;
+}
+
+// Bold
+.font-3 {
+  font-family: "Circular Std", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  color: #333;
+}
+
+// Bold Italic
+.font-4 {
+  font-family: "Circular Std", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  color: #333;
+}
+
+// Book Regular
+.font-5 {
+  font-family: "Circular Std", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: #333;
+}
+
+// Book Italic
+.font-6 {
+  font-family: "Circular Std", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  color: #333;
+}
+
+// Light
+.font-7 {
+  font-family: "Circular Std", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  color: #333;
+}
+
+// Light Italic
+.font-8 {
+  font-family: "Circular Std", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+  color: #333;
+}
+
+// Medium
+.font-9 {
+  font-family: "Circular Std", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: #333;
+}
+
+// Medium Italic
+.font-10 {
+  font-family: "Circular Std", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+  color: #333;
+}
+
+@import "scss/bootstrap.scss";
