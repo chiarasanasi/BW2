@@ -4,7 +4,7 @@
 // FONTS
 $extra-font-sizes: (
   // 80px
-  0: 5rem,
+  0: 4rem,
   // 14px
   7: 0.875rem,
   //  12px
@@ -32,6 +32,7 @@ $border-widths: map-merge($border-widths, $extra-border-width);
 $custom-theme-colors: (
   "primary": #1ed760,
   "secondary": #2c2c2c,
+  "secondary2": #a0a0a0,
   "dark": #171717,
   "dark2": #000000,
 );
