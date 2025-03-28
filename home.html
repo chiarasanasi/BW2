@@ -352,6 +352,7 @@
             <div class="col-12 col-md-6 mb-2 mb-md-0">
               <div class="d-flex w-100">
                 <button
+                  onclick="history.back()"
                   class="btn btn-secondary rounded-circle d-flex align-items-center justify-content-center me-2"
                   style="width: 50px; height: 50px"
                 >
@@ -370,6 +371,7 @@
                 </button>
 
                 <button
+                  onclick="history.forward()"
                   class="btn btn-secondary rounded-circle d-flex align-items-center justify-content-center"
                   style="width: 50px; height: 50px"
                 >
@@ -392,7 +394,12 @@
             <div class="col-12 col-md-6 text-md-end">
               <select class="form-select bg-black text-light rounded-5">
                 <option selected>Riccardo Sangermano</option>
-                <option value="1">Pierattilio Correale</option>
+                <option value="1">
+                  <div style="height: 25px">
+                    <img src="./assets/pierattilio.jpeg" />
+                  </div>
+                  <p>Pierattilio Correale</p>
+                </option>
                 <option value="2">Chiara Sanasi</option>
                 <option value="3">Pietro sorbo</option>
                 <option value="3">Alessandro di Giannantonio</option>
@@ -569,7 +576,7 @@
           </div>
         </article>
         <div
-          class="col-md-2 col-lg-2 d-none d-md-block bg-black text-white min-vh-100"
+          class="col-md-2 col-lg-2 d-none d-md-block bg-black text-white min-vh-100 py-4"
         >
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h6 class="mb-0">Attività Amici</h6>
@@ -604,7 +611,15 @@
           <div class="container">
             <div class="card">
               <div class="card-body row bg-black text-white position-relative">
-                <div class="col-2"></div>
+                <div class="col-2">
+                  <img
+                    src="./chiara.png"
+                    alt="chiara"
+                    width="40px"
+                    height="40px"
+                    class="rounded-5 object-fit-cover"
+                  />
+                </div>
                 <div class="col-8 container text-center">
                   <p class="m-0" style="font-size: 10px">Chiara Sanasi</p>
 
@@ -640,7 +655,15 @@
           <div class="container">
             <div class="card">
               <div class="card-body row bg-black text-white position-relative">
-                <div class="col-2"></div>
+                <div class="col-2">
+                  <img
+                    src="./assets/pierattilio.jpeg"
+                    alt="chiara"
+                    width="40px"
+                    height="40px"
+                    class="rounded-5 object-fit-cover"
+                  />
+                </div>
                 <div class="col-8 container text-center">
                   <p class="m-0" style="font-size: 10px">
                     Pierattilio Correale
@@ -678,7 +701,15 @@
           <div class="container">
             <div class="card">
               <div class="card-body row bg-black text-white position-relative">
-                <div class="col-2"></div>
+                <div class="col-2">
+                  <img
+                    src="./assets/pietro.jpg"
+                    alt="chiara"
+                    width="40px"
+                    height="40px"
+                    class="rounded-5 object-fit-cover"
+                  />
+                </div>
                 <div class="col-8 container text-center">
                   <p class="m-0" style="font-size: 10px">Pietro Sorbo</p>
 
@@ -714,7 +745,15 @@
           <div class="container">
             <div class="card">
               <div class="card-body row bg-black text-white position-relative">
-                <div class="col-2"></div>
+                <div class="col-2">
+                  <img
+                    src="./riccardo.png"
+                    alt="chiara"
+                    width="40px"
+                    height="40px"
+                    class="rounded-5 object-fit-cover"
+                  />
+                </div>
                 <div class="col-8 container text-center">
                   <p class="m-0" style="font-size: 10px">Riccardo Sangermano</p>
 
@@ -750,7 +789,15 @@
           <div class="container">
             <div class="card">
               <div class="card-body row bg-black text-white position-relative">
-                <div class="col-2"></div>
+                <div class="col-2">
+                  <img
+                    src="./assets/alessandro.jpeg"
+                    alt="chiara"
+                    width="40px"
+                    height="40px"
+                    class="rounded-5 object-fit-cover"
+                  />
+                </div>
                 <div class="col-8 container text-center">
                   <p class="m-0 flex-nowrap" style="font-size: 10px">
                     Alessando Di Giannantonio
