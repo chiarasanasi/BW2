@@ -145,75 +145,75 @@ const getAlbumPage = function () {
         const buttonsPlay = document.querySelectorAll(".numero-play-button")
         console.log(buttonsPlay)
 
-        const getBranoName = function () {
-          fetch(
-            deezerUrl +
-              "/" +
-              search +
-              "?q=" +
-              `${button.parentElement.parentElement.children[1].children[0].innerText}`
-          )
-            .then((response) => {
-              if (response.ok) {
-                return response.json()
-              } else {
-                throw new Error("Errore nel recupero dell'album")
-              }
-            })
-            .then((data) => {
-              console.log("DATI DELL'ALBUM", data)
-              //console.log(audioPlayer)
-              if (audioPlayer.pause) {
-                const navPlayer = document.getElementById("nav-player")
-                navPlayer.classList.remove("d-none")
-                audioPlayer.removeAttribute("src")
+        // const getBranoName = function () {
+        //   fetch(
+        //     deezerUrl +
+        //       "/" +
+        //       search +
+        //       "?q=" +
+        //       `${button.parentElement.parentElement.children[1].children[0].innerText}`
+        //   )
+        //     .then((response) => {
+        //       if (response.ok) {
+        //         return response.json()
+        //       } else {
+        //         throw new Error("Errore nel recupero dell'album")
+        //       }
+        //     })
+        //     .then((data) => {
+        //       console.log("DATI DELL'ALBUM", data)
+        //       //console.log(audioPlayer)
+        //       if (audioPlayer.pause) {
+        //         const navPlayer = document.getElementById("nav-player")
+        //         navPlayer.classList.remove("d-none")
+        //         audioPlayer.removeAttribute("src")
 
-                //cambio i dati della navbar in base al brano che è in PLAY
-                const albumCoverPlayNav =
-                  document.getElementById("albumcover-playnav")
-                const songTitlePlayNav =
-                  document.getElementById("songTitle-playnav")
-                const artistNamePlayNav =
-                  document.getElementById("artistname-playnav")
-                const currentTimePlayNav = audioPlayer.currentTime
-                const durationTimePlayNav =
-                  document.getElementById("duration-time")
-                const numeroPlay = document.querySelectorAll(".numero-play")
+        //         //cambio i dati della navbar in base al brano che è in PLAY
+        //         const albumCoverPlayNav =
+        //           document.getElementById("albumcover-playnav")
+        //         const songTitlePlayNav =
+        //           document.getElementById("songTitle-playnav")
+        //         const artistNamePlayNav =
+        //           document.getElementById("artistname-playnav")
+        //         const currentTimePlayNav = audioPlayer.currentTime
+        //         const durationTimePlayNav =
+        //           document.getElementById("duration-time")
+        //         const numeroPlay = document.querySelectorAll(".numero-play")
 
-                const progressBar = document.getElementById("progressbar")
+        //         const progressBar = document.getElementById("progressbar")
 
-                audioPlayer.addEventListener("loadedmetadata", () => {
-                  progressBar.max = audioPlayer.duration
-                })
+        //         audioPlayer.addEventListener("loadedmetadata", () => {
+        //           progressBar.max = audioPlayer.duration
+        //         })
 
-                audioPlayer.addEventListener("timeupdate", () => {
-                  progressBar.value = audioPlayer.currentTime
-                })
+        //         audioPlayer.addEventListener("timeupdate", () => {
+        //           progressBar.value = audioPlayer.currentTime
+        //         })
 
-                progressBar.addEventListener("input", () => {
-                  audioPlayer.currentTime = progressBar
-                })
+        //         progressBar.addEventListener("input", () => {
+        //           audioPlayer.currentTime = progressBar
+        //         })
 
-                albumCoverPlayNav.setAttribute(
-                  "src",
-                  data.data[0].album.cover_xl
-                )
-                songTitlePlayNav.innerText = `${data.data[0].title}`
-                artistNamePlayNav.innerText = `${data.data[0].artist.name}`
-                durationTimePlayNav.innerText = `${formatTime(
-                  data.data[0].duration
-                )}`
+        //         albumCoverPlayNav.setAttribute(
+        //           "src",
+        //           data.data[0].album.cover_xl
+        //         )
+        //         songTitlePlayNav.innerText = `${data.data[0].title}`
+        //         artistNamePlayNav.innerText = `${data.data[0].artist.name}`
+        //         durationTimePlayNav.innerText = `${formatTime(
+        //           data.data[0].duration
+        //         )}`
 
-                audioPlayer.setAttribute("src", `${data.data[0].preview}`)
-                audioPlayer.play()
-              } else if (!audioPlayer.play) {
-                audioPlayer.pause()
-              }
-            })
-            .catch((err) => {
-              console.log("ERRORE", err)
-            })
-        }
+        //         audioPlayer.setAttribute("src", `${data.data[0].preview}`)
+        //         audioPlayer.play()
+        //       } else if (!audioPlayer.play) {
+        //         audioPlayer.pause()
+        //       }
+        //     })
+        //     .catch((err) => {
+        //       console.log("ERRORE", err)
+        //     })
+        // }
 
         buttonsPlay.forEach((button) => {
           button.addEventListener("click", () => {
@@ -234,9 +234,21 @@ const getAlbumPage = function () {
                 })
                 .then((data) => {
                   console.log("DATI DELL'ALBUM", data)
+                  const navPlayer = document.getElementById("nav-player")
+                  const navPlayerPlayBtn = document.getElementById(
+                    "button-play-bar-play"
+                  )
+                  const navPlayerPausedBtn = document.getElementById(
+                    "button-play-bar-paused"
+                  )
                   //console.log(audioPlayer)
-                  if (audioPlayer.pause) {
-                    const navPlayer = document.getElementById("nav-player")
+                  if (audioPlayer.paused) {
+                    console.log("ENTRATI NELL'IF")
+                    console.log(audioPlayer.paused)
+
+                    navPlayerPlayBtn.classList.add("d-none")
+
+                    navPlayerPausedBtn.classList.remove("d-none")
                     navPlayer.classList.remove("d-none")
                     audioPlayer.removeAttribute("src")
 
@@ -278,8 +290,15 @@ const getAlbumPage = function () {
 
                     audioPlayer.setAttribute("src", `${data.data[0].preview}`)
                     audioPlayer.play()
-                  } else if (!audioPlayer.play) {
-                    audioPlayer.removeAttribute("src", `${data.data[0].previe}`)
+                  } else {
+                    console.log("ENTRATI NELL'ELSE IF")
+                    navPlayerPlayBtn.classList.remove("d-none")
+
+                    navPlayerPausedBtn.classList.add("d-none")
+                    audioPlayer.removeAttribute(
+                      "src",
+                      `${data.data[0].preview}`
+                    )
                     audioPlayer.pause()
                   }
                 })
