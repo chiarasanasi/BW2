@@ -4,29 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Spotify</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <style>
-      #scrollspy::-webkit-scrollbar {
-        width: 1000px !important;
-      }
-      #scrollspy::-webkit-scrollbar-track {
-        background-color: #121212;
-      }
-      .card {
-        background-color: #212529;
-      }
-      .card:hover {
-        background-color: #32383e;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      }
-    </style>
+    <link rel="stylesheet" href="./assets/custom-bootstrap.css" />
+    <link rel="stylesheet" href="./assets/css/Bottoni.css" />
+    <link rel="stylesheet" href="/assets/css/playlist.css" />
   </head>
-  <body>
+  <body class="bg-dark">
     <div class="container-fluid">
       <div class="row">
         <nav
@@ -239,32 +221,172 @@
             </ul> -->
           </div>
         </nav>
-        <article
-          class="col-md-7 col-lg-7 min-vh-100 bg-dark p-4 d-flex flex-column"
-        >
-          <h4 class="text-white my-4 col-12">Album che potrebbero piacerti</h4>
-          <div class="container">
-            <div class="row">
-              <div class="d-flex flex-wrap" id="album-home">
-                <!-- <div id="album-card" class="card border-0 p-3">
-                  <img
-                    src="https://cdn-images.dzcdn.net/images/cover/cf155cd476feac69dd36ee65422ab7e7/250x250-000000-80-0-0.jpg"
-                    class="card-img"
-                    alt="album-cover"
-                  />
-                  <div class="card-body py-3 px-0">
-                    <h5 class="card-title text-white">Hello World</h5>
-                    <a href="#" class="text-secondary text-decoration-none fs-6"
-                      >Pinguini Tattici Nucleari</a
+        <!--centro-->
+        <article class="col-md-7 col-lg-7 col-12" id="album-details">
+          <!-- Card Section -->
+          <section class="mb-4">
+            <!-- Sezione 1 -->
+            <section class="mb-3">
+              <div class="row align-items-center gx-0">
+                <div class="col-12 col-md-6 mb-2 mb-md-0">
+                  <div class="d-flex w-100">
+                    <button
+                      class="my-button rounded-circle d-flex align-items-center justify-content-center me-2"
+                      style="width: 50px; height: 50px"
                     >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="25"
+                        height="25"
+                        fill="currentColor"
+                        class="bi bi-caret-left"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      class="my-button rounded-circle d-flex align-items-center justify-content-center"
+                      style="width: 50px; height: 50px"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="25"
+                        height="25"
+                        fill="currentColor"
+                        class="bi bi-caret-right"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"
+                        />
+                      </svg>
+                    </button>
                   </div>
-                </div> -->
+                </div>
+                <div class="col-12 col-md-6 text-md-end">
+                  <select class="form-select bg-black text-light rounded-5">
+                    <option selected>Riccardo Sangermano</option>
+                    <option value="1">Pierattilio Correale</option>
+                    <option value="2">Chiara Sanasi</option>
+                    <option value="3">Pietro sorbo</option>
+                    <option value="4">Alessandro di Giannantonio</option>
+                  </select>
+                </div>
+              </div>
+            </section>
+          </section>
+
+          <!-- Titolo playlist -->
+          <section id="playlist-section" class="mb-4">
+            <div
+              id="playlist-div"
+              class="d-flex align-items-center justify-content-start"
+            >
+              <img src="/assets/imgs/main/playlist.png" alt="" />
+              <div>
+                <p class="ms-3 text-white mb-2">Public Playlist</p>
+                <h1 class="ms-3 fs-0 text-white font-3">My Playlist #1</h1>
               </div>
             </div>
-          </div>
+          </section>
+
+          <!-- cosa c'è nella sezione tracce album  -->
+          <section class="bg-secondary text-light py-2">
+            <div class="row align-items-center gx-0">
+              <div class="col-md-6 align-items-center">
+                <div class="d-flex w-100">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="45"
+                    height="45"
+                    fill="currentColor"
+                    class="bi bi-arrow-down-circle p-2"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z"
+                    />
+                  </svg>
+                  <button class="invisible-button ms-2 me-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      fill="currentColor"
+                      class="bi bi-person-plus"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5"
+                      />
+                    </svg>
+                  </button>
+
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="35"
+                    height="35"
+                    fill="currentColor"
+                    class="bi bi-three-dots me-2 mt-1"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="text-light py-2 border-bottom border-1 border-light">
+            <div class="container">
+              <div class="row">
+                <div class="col-1" id="numero-traccia">#</div>
+                <div class="col-2 fw-semibold" id="titolo-traccia">Titolo</div>
+                <div class="col-9 d-flex justify-content-end" id="time-traccia">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-clock"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"
+                    />
+                    <path
+                      d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </section>
+          <p class="text-white fs-4 font-3 mt-3">
+            Cerca qualcosa per la tua playlist
+          </p>
+          <!-- INSERIRE SEARCHBAR -->
+
+          <!-- tracce album-->
+          <section class="text-light py-2">
+            <div class="container" id="tracks">
+              <!-- QUESTA PARTE LA CREO IN ALBUM.JS -->
+            </div>
+          </section>
         </article>
+
+        <!-- Chiusura dell'elemento article -->
         <div
-          class="col-md-2 col-lg-2 d-none d-sm-block bg-black text-white min-vh-100"
+          class="col-md-2 col-lg-2 d-none d-md-block bg-black text-white min-vh-100"
         >
           <div class="container">
             <div class="card">
@@ -435,7 +557,6 @@
                         d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"
                       />
                     </svg>
-
                     <p class="m-0 ml-2" style="font-size: 7px">
                       Hotline bling - Drake
                     </p>
@@ -459,6 +580,8 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script src="./script/home-album.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.2/color-thief.umd.js"></script>
+    <script src="./script/heart.js"></script>
+    <script src="./script/album.js"></script>
   </body>
 </html>
