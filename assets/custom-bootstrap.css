@@ -39,6 +39,19 @@
   scale: 1.05;
 }
 
+.btn-custom3small {
+  background-color: #1ed760;
+  color: black;
+  padding: 8px 8px;
+  border: 0px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.btn-custom3small:hover {
+  scale: 1.05;
+}
+
 .btn-custom4 {
   background-color: rgba(0, 0, 0, 0);
   color: white;

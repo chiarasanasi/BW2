@@ -2,12 +2,14 @@ const deezerUrl = "https://striveschool-api.herokuapp.com/api/deezer"
 const search = "search"
 
 const artisti = [
-  "pinguini",
   "queen",
-  "angelinamango",
+  "madonna",
   "gorillaz",
   "beatles",
   "eminem",
+  "billieeilish",
+  "lordes",
+  "greenday",
 ]
 
 const getAlbumCard = function () {
@@ -32,11 +34,11 @@ const getAlbumCard = function () {
         // const randomTrackIndex = Math.floor(Math.random() * 25)
         // console.log(randomTrackIndex)
 
-        albumTitle = data.data[0].album.title
-        albumId = data.data[0].album.id
-        albumArtist = data.data[0].artist.name
-        albumCover = data.data[0].album.cover_medium
-        artistID = data.data[0].artist.id
+        albumTitle = data.data[1].album.title
+        albumId = data.data[1].album.id
+        albumArtist = data.data[1].artist.name
+        albumCover = data.data[1].album.cover_medium
+        artistID = data.data[1].artist.id
 
         console.log(
           `ALBUM TITLE : ${albumTitle}, ALBUM ID : ${albumId}, ARIST NAME : ${albumArtist}, ALBUM COVER ${albumCover}`
@@ -44,7 +46,15 @@ const getAlbumCard = function () {
 
         const albumHome = document.getElementById("album-home")
         const cardAlbum = document.createElement("div")
-        cardAlbum.classList.add("card", "border-0", "p-3", "col-4")
+        cardAlbum.classList.add(
+          "card",
+          "border-0",
+          "p-3",
+          "col-xl-3",
+          "col-lg-4",
+          "col-md-6",
+          "col-12"
+        )
         cardAlbum.innerHTML = `
         <img
                 src="${albumCover}"
@@ -53,7 +63,7 @@ const getAlbumCard = function () {
             
               />
               <div class="card-body py-3 px-0">
-                <a class="card-title text-white text-decoration-none fs-4 fw-semibold d-block" href="./album2.html?id=${albumId}">${albumTitle}</a>
+                <a class="card-title text-white text-decoration-none fs-5 fw-semibold d-block" href="./album2.html?id=${albumId}">${albumTitle}</a>
                 <a href="./artist.html?id=${artistID}" class="text-secondary text-decoration-none fs-6"
                   >${albumArtist}</a
                 >

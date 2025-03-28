@@ -88,6 +88,20 @@ $theme-colors: map-merge($theme-colors, $custom-theme-colors);
   }
 }
 
+.btn-custom3small {
+  background-color: #1ed760;
+  color: black;
+  padding: 8px 8px;
+  border: 0px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: 0.3s;
+
+  &:hover {
+    scale: 1.05;
+  }
+}
+
 // bottone following
 .btn-custom4 {
   background-color: #00000000;
