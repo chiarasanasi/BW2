@@ -37,7 +37,7 @@ const searchAPI = function (inputvalue) {
             <img src="${album.cover_medium}" class="card-img-top" alt="album musicale">
             <div class="card-body">
               <h5 class="card-title text-white">${album.title}</h5>
-              <p class="card-text"><a class="text-secondary text-decoration-none" href="./artist.html?id=${artist.id}" target="_blank">${artist.name}</a></p>
+              <p class="card-text"><a class="text-secondary2 text-decoration-none" href="./artist.html?id=${artist.id}" target="_blank">${artist.name}</a></p>
               <a href="./album2.html?id=${album.id}" class="btn btn-outline-primary" target="_blank">Ascolta L'Album</a>
             </div>
           </div>
@@ -62,7 +62,7 @@ const searchAPI = function (inputvalue) {
             </div>
             <div class="d-flex flex-column  p-0 m-0">
             <p class="p-0 m-0 text-white">${track.title}</p>
-            <p class="p-0 m-0 text-secondary"><a class=" text-secondary text-decoration-none" href="./artist.html?id=${track.artist.id}">${track.artist.name}</a></p>
+            <p class="p-0 m-0 text-secondary"><a class=" text-secondary2 text-decoration-none" href="./artist.html?id=${track.artist.id}">${track.artist.name}</a></p>
             </div>
           
                  
