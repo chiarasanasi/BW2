@@ -150,14 +150,14 @@
       cursor: pointer;
     }
     
-    /* Modifica il colore della barra quando si passa sopra con il mouse */
+    
     #volume:hover {
-      background: white; /* Colore della barra quando hover */
+      background: white; 
     }
     
-    /* Cambia il colore del pallino quando è in focus */
+   
     #volume:focus::-webkit-slider-thumb {
-      background: white; /* Colore del pallino in focus */
+      background: white; 
     }
     
     #nav-mobile {
