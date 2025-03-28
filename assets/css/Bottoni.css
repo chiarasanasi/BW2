@@ -1,11 +1,14 @@
 .my-button  {
     display: inline-block; 
-    border: 1px solid #ccc;
+    border: 1px solid black;
     background-color: #33333396; 
     color: #ece1e1; 
     text-decoration: none; 
     cursor: pointer; 
     border-radius: 5px; 
+    width: 30px;
+    height: 30px;
+    margin-top: 1em;
     
   }
   
@@ -15,8 +18,8 @@
   }
   
   .my-button  svg {
-      width: 40px; 
-      height: 40px; 
+      width: 20px; 
+      height: 20px; 
       transition: transform 0.3s ease; 
   }
   
