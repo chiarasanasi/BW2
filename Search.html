@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spotify</title>
+    <link href="./assets/custom-bootstrap.css" rel="stylesheet" />
+    <style>
+      #scrollspy::-webkit-scrollbar {
+        width: 1000px !important;
+      }
+      #scrollspy::-webkit-scrollbar-track {
+        background-color: #121212;
+      }
+      .card {
+        background-color: #212529;
+      }
+      .card:hover {
+        background-color: #32383e;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      .inputpower::placeholder {
+        color: #afafaf;
+        opacity: 1;
+      }
+
+      .inputpower::-ms-input-placeholder {
+        color: #afafaf;
+      }
+      .rotationnn {
+        transform: rotate(20deg) translateX(23px);
+      }
+      .colore1 {
+        background-color: #de3600;
+      }
+      .colore2 {
+        background-color: #1e3264;
+      }
+      .colore3 {
+        background-color: #e8125c;
+      }
+      .colore4 {
+        background-color: #158a08;
+      }
+      .colore5 {
+        background-color: #bc5800;
+      }
+      .colore6 {
+        background-color: #d84000;
+      }
+      .colore7 {
+        background-color: #e1118b;
+      }
+      .colore8 {
+        background-color: #8c67ac;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <nav
+          class="col-md-3 col-lg-3 d-none d-md-block bg-black text-white min-vh-100 p-3"
+        >
+          <div
+            class="sticky-top flex-grow-1 overflow-auto z-2 position-relative"
+          >
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a href="#" class="nav-link text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-three-dots"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-house-door-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"
+                    />
+                  </svg>
+                  Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-search"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+                    />
+                  </svg>
+                  Cerca</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-music-note-list"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2"
+                    />
+                    <path fill-rule="evenodd" d="M12 3v10h-1V3z" />
+                    <path
+                      d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1z"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5m0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5m0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5"
+                    />
+                  </svg>
+                  La tua libreria</a
+                >
+              </li>
+              <li class="nav-item mt-3">
+                <a href="#" class="nav-link text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-plus-square-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"
+                    />
+                  </svg>
+                  Crea playlist</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-heart-pulse-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M1.475 9C2.702 10.84 4.779 12.871 8 15c3.221-2.129 5.298-4.16 6.525-6H12a.5.5 0 0 1-.464-.314l-1.457-3.642-1.598 5.593a.5.5 0 0 1-.945.049L5.889 6.568l-1.473 2.21A.5.5 0 0 1 4 9z"
+                    />
+                    <path
+                      d="M.88 8C-2.427 1.68 4.41-2 7.823 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C11.59-2 18.426 1.68 15.12 8h-2.783l-1.874-4.686a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8z"
+                    />
+                  </svg>
+                  Brani che ti piacciono
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="#"
+                  class="nav-link text-white border-bottom border-white"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-bookmarks"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1z"
+                    />
+                    <path
+                      d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1"
+                    />
+                  </svg>
+                  I tuoi episodi</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="z-1 position-sticky overflow-auto" style="height: 500px">
+            <div
+              data-bs-spy="scroll"
+              data-bs-target="#navbar-example2"
+              data-bs-root-margin="0px 0px -40%"
+              data-bs-smooth-scroll="true"
+              class="scrollspy-example bg-black p-3 rounded-2"
+              tabindex="0"
+              id="scrollspy"
+            >
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
+                error repudiandae dignissimos veniam consectetur! Possimus
+                quidem quaerat repellendus quam, impedit quis quos dolorum
+                perspiciatis officia, asperiores expedita! Ex, iure cumque!
+              </p>
+              <h4 id="scrollspyHeading1">First heading</h4>
+              <p>...</p>
+              <h4 id="scrollspyHeading2">Second heading</h4>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Distinctio possimus autem ducimus asperiores dolor totam hic
+                earum, doloribus temporibus voluptatibus quisquam dolorem
+                impedit quo vitae iusto? Vitae tempore accusantium soluta.
+              </p>
+              <h4 id="scrollspyHeading3">Third heading</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Ratione, dolorum, repudiandae cupiditate debitis, dicta quis
+                repellendus neque voluptates ex quas laboriosam blanditiis
+                quisquam vero libero. Explicabo impedit ad architecto nulla?
+              </p>
+              <h4 id="scrollspyHeading4">Fourth heading</h4>
+              <p>...</p>
+              <h4 id="scrollspyHeading5">Fifth heading</h4>
+              <p>...</p>
+            </div>
+            <!-- <ul class="nav flex-column">
+              <li class="nav-item">
+                <a href="#" class="nav-link text-white"
+                  >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Accusamus, illo quos vero modi, autem sunt earum sed vitae
+                  expedita soluta quis explicabo accusantium repellat quibusdam
+                  nam, incidunt hic consequuntur sint?</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link text-white"
+                  >Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Dolor, reiciendis doloribus illo illum magni rem voluptas vero
+                  a soluta explicabo cumque necessitatibus praesentium
+                  consectetur dolores libero repudiandae accusantium similique
+                  veniam!</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link text-white"
+                  >Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
+                  repellat, atque quis porro totam eius doloremque, tenetur
+                  consectetur accusamus dignissimos nemo rem ipsam illum ad ut
+                  vel, pariatur earum enim?</a
+                >
+              </li>
+            </ul> -->
+          </div>
+        </nav>
+        <article
+          class="col-md-7 col-lg-7 min-vh-100 bg-dark p-4 d-flex flex-column"
+        >
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <h3 class="text-white">Cerca</h3>
+                <form class="d-flex" role="search" id="myForm">
+                  <input
+                    class="form-control me-2 bg-secondary inputpower text-white"
+                    type="search"
+                    placeholder="Cosa vuoi ascoltare?"
+                    aria-label="Search"
+                    id="inputarget"
+                  />
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="row my-5 justify-content-center" id="cardsearch"></div>
+          <h4 class="text-center text-white mb-5">Sfoglia tutto</h4>
+          <div class="container">
+            <div class="row g-5 d-flex">
+              <div
+                class="col-xxl-3 col-md-6 col-lg-6 col-xl-4 col-12 ms-5 ms-sm-0 col-sm-6"
+              >
+                <div
+                  class="colore1 position-relative overflow-hidden rounded-3"
+                  style="height: 130px; width: 200px"
+                >
+                  <h3 class="text-white p-3">Podcast</h3>
+                  <div
+                    class="rotationnn position-absolute bottom-0 end-0"
+                    style="width: 70px; height: 70px"
+                  >
+                    <img
+                      class="rounded-3 w-100 h-100"
+                      src="./assets/imgs/search/image-2.jpg"
+                      style="object-fit: cover"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-xxl-3 col-md-6 col-lg-6 col-xl-4 col-12 ms-5 ms-sm-0 col-sm-6"
+              >
+                <div
+                  class="colore2 position-relative overflow-hidden rounded-3"
+                  style="height: 130px; width: 200px"
+                >
+                  <h3 class="text-white p-3">Create per te</h3>
+                  <div
+                    class="rotationnn position-absolute bottom-0 end-0"
+                    style="width: 70px; height: 70px"
+                  >
+                    <img
+                      class="rounded-3 w-100 h-100"
+                      src="./assets/imgs/search/image-42.png"
+                      style="object-fit: cover"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-xxl-3 col-md-6 col-lg-6 col-xl-4 col-12 ms-5 ms-sm-0 col-sm-6"
+              >
+                <div
+                  class="colore3 position-relative overflow-hidden rounded-3"
+                  style="height: 130px; width: 200px"
+                >
+                  <h3 class="text-white p-3">Nuove uscite</h3>
+                  <div
+                    class="rotationnn position-absolute bottom-0 end-0"
+                    style="width: 70px; height: 70px"
+                  >
+                    <img
+                      class="rounded-3 w-100 h-100"
+                      src="./assets/imgs/search/image-26.jpg"
+                      style="object-fit: cover"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-xxl-3 col-md-6 col-lg-6 col-xl-4 col-12 ms-5 ms-sm-0 col-sm-6"
+              >
+                <div
+                  class="colore4 position-relative overflow-hidden rounded-3"
+                  style="height: 130px; width: 200px"
+                >
+                  <h3 class="text-white p-3">Pop</h3>
+                  <div
+                    class="rotationnn position-absolute bottom-0 end-0"
+                    style="width: 70px; height: 70px"
+                  >
+                    <img
+                      class="rounded-3 w-100 h-100"
+                      src="./assets/imgs/search/image-47.jpg"
+                      style="object-fit: cover"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-xxl-3 col-md-6 col-lg-6 col-xl-4 col-12 ms-5 ms-sm-0 col-sm-6"
+              >
+                <div
+                  class="colore5 position-relative overflow-hidden rounded-3"
+                  style="height: 130px; width: 200px"
+                >
+                  <h3 class="text-white p-3">Hip Hop</h3>
+                  <div
+                    class="rotationnn position-absolute bottom-0 end-0"
+                    style="width: 70px; height: 70px"
+                  >
+                    <img
+                      class="rounded-3 w-100 h-100"
+                      src="./assets/imgs/search/image-49.jpg"
+                      style="object-fit: cover"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-xxl-3 col-md-6 col-lg-6 col-xl-4 col-12 ms-5 ms-sm-0 col-sm-6"
+              >
+                <div
+                  class="colore6 position-relative overflow-hidden rounded-3"
+                  style="height: 130px; width: 200px"
+                >
+                  <h3 class="text-white p-3">Dance / <br />Elettronica</h3>
+                  <div
+                    class="rotationnn position-absolute bottom-0 end-0"
+                    style="width: 70px; height: 70px"
+                  >
+                    <img
+                      class="rounded-3 w-100 h-100"
+                      src="./assets/imgs/search/image-52.jpg"
+                      style="object-fit: cover"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-xxl-3 col-md-6 col-lg-6 col-xl-4 col-12 ms-5 ms-sm-0 col-sm-6"
+              >
+                <div
+                  class="colore7 position-relative overflow-hidden rounded-3"
+                  style="height: 130px; width: 200px"
+                >
+                  <h3 class="text-white p-3">Latina</h3>
+                  <div
+                    class="rotationnn position-absolute bottom-0 end-0"
+                    style="width: 70px; height: 70px"
+                  >
+                    <img
+                      class="rounded-3 w-100 h-100"
+                      src="./assets/imgs/search/image-5.jpg"
+                      style="object-fit: cover"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-xxl-3 col-md-6 col-lg-6 col-xl-4 col-12 ms-5 ms-sm-0 col-sm-6"
+              >
+                <div
+                  class="colore8 position-relative overflow-hidden rounded-3"
+                  style="height: 130px; width: 200px"
+                >
+                  <h3 class="text-white p-3">Classifiche</h3>
+                  <div
+                    class="rotationnn position-absolute bottom-0 end-0"
+                    style="width: 70px; height: 70px"
+                  >
+                    <img
+                      class="rounded-3 w-100 h-100"
+                      src="./assets/imgs/search/image-14.jpg"
+                      style="object-fit: cover"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <div
+          class="col-md-2 col-lg-2 d-none d-sm-block bg-black text-white min-vh-100"
+        >
+          <div class="container">
+            <div class="card">
+              <div class="card-body row bg-black text-white position-relative">
+                <div class="col-2"></div>
+                <div class="col-8 container text-center">
+                  <p class="m-0" style="font-size: 10px">Chiara Sanasi</p>
+
+                  <div class="d-flex justify-content-center align-items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-bar-chart-fill"
+                      viewBox="0 0 16 16"
+                      style="width: 8px"
+                    >
+                      <path
+                        d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"
+                      />
+                    </svg>
+
+                    <p class="m-0 ml-2" style="font-size: 7px">
+                      Undecided - Saint JHN
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="col-2 position-absolute top-2 end-0 p-1"
+                  style="font-size: 6px"
+                >
+                  3 min
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="card">
+              <div class="card-body row bg-black text-white position-relative">
+                <div class="col-2"></div>
+                <div class="col-8 container text-center">
+                  <p class="m-0" style="font-size: 10px">
+                    Pierattilio Correale
+                  </p>
+
+                  <div class="d-flex justify-content-center align-items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-bar-chart-fill"
+                      viewBox="0 0 16 16"
+                      style="width: 8px"
+                    >
+                      <path
+                        d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"
+                      />
+                    </svg>
+
+                    <p class="m-0 ml-2" style="font-size: 7px">
+                      Cry for me - The Weeknd
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="col-2 position-absolute top-2 end-0 p-1"
+                  style="font-size: 6px"
+                >
+                  5 min
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="card">
+              <div class="card-body row bg-black text-white position-relative">
+                <div class="col-2"></div>
+                <div class="col-8 container text-center">
+                  <p class="m-0" style="font-size: 10px">Pietro Sorbo</p>
+
+                  <div class="d-flex justify-content-center align-items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-bar-chart-fill"
+                      viewBox="0 0 16 16"
+                      style="width: 8px"
+                    >
+                      <path
+                        d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"
+                      />
+                    </svg>
+
+                    <p class="m-0 ml-2" style="font-size: 7px">
+                      Dark Necessities - RHCP
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="col-2 position-absolute top-2 end-0 p-1"
+                  style="font-size: 6px"
+                >
+                  8 min
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="card">
+              <div class="card-body row bg-black text-white position-relative">
+                <div class="col-2"></div>
+                <div class="col-8 container text-center">
+                  <p class="m-0" style="font-size: 10px">Riccardo Sangermano</p>
+
+                  <div class="d-flex justify-content-center align-items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-bar-chart-fill"
+                      viewBox="0 0 16 16"
+                      style="width: 8px"
+                    >
+                      <path
+                        d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"
+                      />
+                    </svg>
+
+                    <p class="m-0 ml-2" style="font-size: 7px">
+                      Yonaguni - Bad Bunny
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="col-2 position-absolute top-2 end-0 p-1"
+                  style="font-size: 6px"
+                >
+                  6 min
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="card">
+              <div class="card-body row bg-black text-white position-relative">
+                <div class="col-2"></div>
+                <div class="col-8 container text-center">
+                  <p class="m-0 flex-nowrap" style="font-size: 10px">
+                    Alessando Di Giannantonio
+                  </p>
+
+                  <div class="d-flex justify-content-center align-items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-bar-chart-fill"
+                      viewBox="0 0 16 16"
+                      style="width: 8px"
+                    >
+                      <path
+                        d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"
+                      />
+                    </svg>
+
+                    <p class="m-0 ml-2" style="font-size: 7px">
+                      Hotline bling - Drake
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="col-2 position-absolute top-2 end-0 p-1"
+                  style="font-size: 6px"
+                >
+                  1 min
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script/Search.js"></script>
+  </body>
+</html>
