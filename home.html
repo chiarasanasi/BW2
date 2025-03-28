@@ -4,18 +4,44 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Spotify</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
+    <link href="./assets/custom-bootstrap.css" rel="stylesheet" />
+
     <style>
-      #scrollspy::-webkit-scrollbar {
-        width: 1000px !important;
+      .custom-scroll {
+        overflow-y: auto;
+        max-height: 300px;
       }
-      #scrollspy::-webkit-scrollbar-track {
-        background-color: #121212;
+
+      .custom-scroll::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .custom-scroll::-webkit-scrollbar-thumb {
+        background-color: grey;
+      }
+
+      .custom-scroll::-webkit-scrollbar-track {
+        background-color: #000000;
+      }
+      .player-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #181818;
+        color: white;
+        padding: 10px;
+        z-index: 1050;
+      }
+      .progress-bar {
+        width: 100%;
+      }
+      .player-controls i {
+        font-size: 20px;
+        cursor: pointer;
+      }
+      body {
+        padding-bottom: 60px;
       }
       .card {
         background-color: #212529;
@@ -24,8 +50,57 @@
         background-color: #32383e;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       }
+      .btn {
+        display: inline-block;
+        border: 1px solid #ccc;
+        background-color: #333333a7;
+        color: #ece1e1;
+        text-decoration: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      .btn:hover {
+        background-color: black;
+      }
+
+      .btn svg {
+        width: 60px;
+        height: 60px;
+        transition: transform 0.3s ease;
+      }
+      .little-img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+      }
+      /* .playlist-card {
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+      }
+      .playlist-card img {
+        width: 100%;
+        height: auto;
+      }
+      .playlist-card .card-body {
+        padding: 15px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+      }
+      .playlist-card .card-body h5 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+      .playlist-card .card-body p {
+        font-size: 0.9rem;
+      } */
+      #playlist-card {
+        width: 300px !important;
+      }
     </style>
   </head>
+
   <body>
     <div class="container-fluid">
       <div class="row">
@@ -173,7 +248,10 @@
               </li>
             </ul>
           </div>
-          <div class="z-1 position-sticky overflow-auto" style="height: 500px">
+          <div
+            class="z-1 position-sticky overflow-auto custom-scroll"
+            style="height: 500px"
+          >
             <div
               data-bs-spy="scroll"
               data-bs-target="#navbar-example2"
@@ -183,82 +261,244 @@
               tabindex="0"
               id="scrollspy"
             >
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-                error repudiandae dignissimos veniam consectetur! Possimus
-                quidem quaerat repellendus quam, impedit quis quos dolorum
-                perspiciatis officia, asperiores expedita! Ex, iure cumque!
-              </p>
-              <h4 id="scrollspyHeading1">First heading</h4>
-              <p>...</p>
-              <h4 id="scrollspyHeading2">Second heading</h4>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Distinctio possimus autem ducimus asperiores dolor totam hic
-                earum, doloribus temporibus voluptatibus quisquam dolorem
-                impedit quo vitae iusto? Vitae tempore accusantium soluta.
-              </p>
-              <h4 id="scrollspyHeading3">Third heading</h4>
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Ratione, dolorum, repudiandae cupiditate debitis, dicta quis
-                repellendus neque voluptates ex quas laboriosam blanditiis
-                quisquam vero libero. Explicabo impedit ad architecto nulla?
-              </p>
-              <h4 id="scrollspyHeading4">Fourth heading</h4>
-              <p>...</p>
-              <h4 id="scrollspyHeading5">Fifth heading</h4>
-              <p>...</p>
+              <p>early stage emily syndrome</p>
+              <p>Be The Young</p>
+              <p>saggio vibes</p>
+              <p>main character energy</p>
+              <p>that fucking mood</p>
+              <p>VEE CARLOTTA E GIACOMO</p>
+              <p>An emily Winchester kind of mood</p>
+              <p>landning page</p>
+              <p>2021 lol</p>
+              <p>cosa cazzo vuol dire</p>
+              <p>honey and glass</p>
+              <p>(revenge) training arc</p>
+              <p>minecratf & nintendo switch</p>
+              <p>silvano d'orba? I hardly know her</p>
+              <p>Culo 2022</p>
+              <p>Frah Quintale mix</p>
             </div>
-            <!-- <ul class="nav flex-column">
-              <li class="nav-item">
-                <a href="#" class="nav-link text-white"
-                  >Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Accusamus, illo quos vero modi, autem sunt earum sed vitae
-                  expedita soluta quis explicabo accusantium repellat quibusdam
-                  nam, incidunt hic consequuntur sint?</a
-                >
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link text-white"
-                  >Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Dolor, reiciendis doloribus illo illum magni rem voluptas vero
-                  a soluta explicabo cumque necessitatibus praesentium
-                  consectetur dolores libero repudiandae accusantium similique
-                  veniam!</a
-                >
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link text-white"
-                  >Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
-                  repellat, atque quis porro totam eius doloremque, tenetur
-                  consectetur accusamus dignissimos nemo rem ipsam illum ad ut
-                  vel, pariatur earum enim?</a
-                >
-              </li>
-            </ul> -->
           </div>
         </nav>
         <article
           class="col-md-7 col-lg-7 min-vh-100 bg-dark p-4 d-flex flex-column"
         >
-          <h4 class="text-white my-4 col-12">Album che potrebbero piacerti</h4>
-          <div class="container">
+          <div class="row align-items-center gx-0">
+            <div class="col-12 col-md-6 mb-2 mb-md-0">
+              <div class="d-flex w-100">
+                <button
+                  class="btn btn-secondary rounded-circle d-flex align-items-center justify-content-center me-2"
+                  style="width: 50px; height: 50px"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="30"
+                    fill="currentColor"
+                    class="bi bi-caret-left"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753"
+                    />
+                  </svg>
+                </button>
+
+                <button
+                  class="btn btn-secondary rounded-circle d-flex align-items-center justify-content-center"
+                  style="width: 50px; height: 50px"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="30"
+                    fill="currentColor"
+                    class="bi bi-caret-right"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 text-md-end">
+              <select class="form-select bg-black text-light rounded-5">
+                <option selected>Riccardo Sangermano</option>
+                <option value="1">Pierattilio Correale</option>
+                <option value="2">Chiara Sanasi</option>
+                <option value="3">Pietro sorbo</option>
+                <option value="3">Alessandro di Giannantonio</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- CARD CENTRALE -->
+          <div
+            id="collapseExample"
+            class="container-fluid p-5 position-relative rounded-3 my-5"
+            style="background: linear-gradient(to top, black, #2c2c2c)"
+          >
+            <div class="d-flex align-items-center collapse show">
+              <!-- Aggiunto "show" -->
+              <button
+                class="bg-dark border-0 text-light-emphasis position-absolute rounded-5 top-0 end-0 m-4 px-3 py-2"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseExample"
+                aria-expanded="true"
+                aria-controls="collapseExample"
+              >
+                Nascondi sezione
+              </button>
+              <img
+                src="./assets/imgs/search/image-42.png"
+                alt="Copertina Album"
+                class="img-fluid rounded me-3"
+                style="width: 200px"
+              />
+              <div class="text-white">
+                <h6 class="text-uppercase">Playlist</h6>
+                <h1 class="fw-bold">POP MIX</h1>
+                <p>I tuoi artisti preferiti</p>
+                <button class="btn-custom">Play</button>
+                <button class="btn-custom2">Salva</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ALBUM CHE POTREBBERO PIACERTI : PARTE FATTA IN JS -->
+
+          <div>
             <div class="row">
-              <div class="d-flex flex-wrap" id="album-home">
-                <!-- <div id="album-card" class="card border-0 p-3">
+              <h4 class="text-white my-4 col-12">
+                Album che potrebbero piacerti
+              </h4>
+              <div class="d-flex flex-wrap gap-" id="album-home"></div>
+            </div>
+          </div>
+
+          <!-- ALTRO DI CIO' CHE TI PIACE -->
+
+          <div>
+            <div class="row">
+              <h4 class="text-white my-4 col-12">Altro di ciò che ti piace</h4>
+              <div class="d-flex flex-wrap gap-">
+                <div class="border-0 p-3 col-xl-3 col-lg-4 col-md-6 col-12">
                   <img
-                    src="https://cdn-images.dzcdn.net/images/cover/cf155cd476feac69dd36ee65422ab7e7/250x250-000000-80-0-0.jpg"
+                    src="./assets/imgs/main/image-1.jpg"
                     class="card-img"
-                    alt="album-cover"
+                    alt="..."
                   />
                   <div class="card-body py-3 px-0">
-                    <h5 class="card-title text-white">Hello World</h5>
-                    <a href="#" class="text-secondary text-decoration-none fs-6"
-                      >Pinguini Tattici Nucleari</a
+                    <a
+                      class="card-title text-white text-decoration-none fs-4 fw-semibold d-block"
+                      href="./album2.html?id=${albumId}"
+                      >BASTA</a
+                    >
+                    <a
+                      href="./artist.html?id=${artistID}"
+                      class="text-secondary text-decoration-none fs-6"
+                      >Neima Ezza</a
                     >
                   </div>
-                </div> -->
+                </div>
+                <div class="border-0 p-3 col-xl-3 col-lg-4 col-md-6 col-12">
+                  <img
+                    src="./assets/imgs/main/image-2.jpg"
+                    class="card-img"
+                    alt="..."
+                  />
+                  <div class="card-body py-3 px-0">
+                    <a
+                      class="card-title text-white text-decoration-none fs-4 fw-semibold d-block"
+                      href="./album2.html?id=${albumId}"
+                      >POV : la tua estate è un film</a
+                    >
+                    <a
+                      href="./artist.html?id=${artistID}"
+                      class="text-secondary text-decoration-none fs-6"
+                      >Playlist</a
+                    >
+                  </div>
+                </div>
+                <div class="border-0 p-3 col-xl-3 col-lg-4 col-md-6 col-12">
+                  <img
+                    src="./assets/imgs/main/image-3.jpg"
+                    class="card-img"
+                    alt="..."
+                  />
+                  <div class="card-body py-3 px-0">
+                    <a
+                      class="card-title text-white text-decoration-none fs-4 fw-semibold d-block"
+                      href="./album2.html?id=${albumId}"
+                      >Massima Concentrazione</a
+                    >
+                    <a
+                      href="./artist.html?id=${artistID}"
+                      class="text-secondary text-decoration-none fs-6"
+                      >Playlist</a
+                    >
+                  </div>
+                </div>
+                <div class="border-0 p-3 col-xl-3 col-lg-4 col-md-6 col-12">
+                  <img
+                    src="./assets/imgs/main/image-4.jpg"
+                    class="card-img"
+                    alt="..."
+                  />
+                  <div class="card-body py-3 px-0">
+                    <a
+                      class="card-title text-white text-decoration-none fs-4 fw-semibold d-block"
+                      href="./album2.html?id=${albumId}"
+                      >Peaceful Piano</a
+                    >
+                    <a
+                      href="./artist.html?id=${artistID}"
+                      class="text-secondary text-decoration-none fs-6"
+                      >Playlist</a
+                    >
+                  </div>
+                </div>
+                <div class="border-0 p-3 col-xl-3 col-lg-4 col-md-6 col-12">
+                  <img
+                    src="./assets/imgs/main/image-5.jpg"
+                    class="card-img"
+                    alt="..."
+                  />
+                  <div class="card-body py-3 px-0">
+                    <a
+                      class="card-title text-white text-decoration-none fs-4 fw-semibold d-block"
+                      href="./album2.html?id=${albumId}"
+                      >Lofi beats</a
+                    >
+                    <a
+                      href="./artist.html?id=${artistID}"
+                      class="text-secondary text-decoration-none fs-6"
+                      >Playlist</a
+                    >
+                  </div>
+                </div>
+                <div class="border-0 p-3 col-xl-3 col-lg-4 col-md-6 col-12">
+                  <img
+                    src="./assets/imgs/main/image-6.jpg"
+                    class="card-img"
+                    alt="..."
+                  />
+                  <div class="card-body py-3 px-0">
+                    <a
+                      class="card-title text-white text-decoration-none fs-4 fw-semibold d-block"
+                      href="./album2.html?id=${albumId}"
+                      >Jazz Vibes</a
+                    >
+                    <a
+                      href="./artist.html?id=${artistID}"
+                      class="text-secondary text-decoration-none fs-6"
+                      >Playlist</a
+                    >
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -266,6 +506,36 @@
         <div
           class="col-md-2 col-lg-2 d-none d-sm-block bg-black text-white min-vh-100"
         >
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h6 class="mb-0">Attività Amici</h6>
+            <div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-people-fill me-2"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-x-lg"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
+                />
+              </svg>
+            </div>
+          </div>
+
           <div class="container">
             <div class="card">
               <div class="card-body row bg-black text-white position-relative">
@@ -452,6 +722,193 @@
           </div>
         </div>
       </div>
+    </div>
+    <!-- DESKTOP PLAYER -->
+    <div
+      class="player-bar d-flex justify-content-between align-items-center text-white bg-dark2 p-2 user-select-none"
+    >
+      <div class="d-flex align-items-center me-5">
+        <img
+          src="./assets/imgs/main/image-4.jpg"
+          alt="Album Cover"
+          class="rounded me-2"
+          width="50"
+        />
+        <div>
+          <div class="fw-bold">
+            <span>Mercury</span>
+          </div>
+          <div class="text-white">
+            <span> Imagine Dragons </span>
+          </div>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-heart ms-3"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"
+          />
+        </svg>
+      </div>
+
+      <section class="w-50 text-center">
+        <!-- Shuffle -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-shuffle me-3"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.6 9.6 0 0 0 7.556 8a9.6 9.6 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.6 10.6 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.6 9.6 0 0 0 6.444 8a9.6 9.6 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5"
+          />
+          <path
+            d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192m0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192"
+          />
+        </svg>
+
+        <!-- Skip start -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="25"
+          height="25"
+          fill="currentColor"
+          class="bi bi-skip-start-fill me-3"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M4 4a.5.5 0 0 1 1 0v3.248l6.267-3.636c.54-.313 1.232.066 1.232.696v7.384c0 .63-.692 1.01-1.232.697L5 8.753V12a.5.5 0 0 1-1 0z"
+          />
+        </svg>
+        <!-- play button -->
+        <button class="btn-custom5 mb-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            fill="currentColor"
+            class="bi bi-play-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"
+            />
+          </svg>
+        </button>
+
+        <!-- Skip end -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="25"
+          height="25"
+          fill="currentColor"
+          class="bi bi-skip-end-fill ms-3"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M12.5 4a.5.5 0 0 0-1 0v3.248L5.233 3.612C4.693 3.3 4 3.678 4 4.308v7.384c0 .63.692 1.01 1.233.697L11.5 8.753V12a.5.5 0 0 0 1 0z"
+          />
+        </svg>
+
+        <!-- Loop -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-repeat ms-3"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M11 5.466V4H5a4 4 0 0 0-3.584 5.777.5.5 0 1 1-.896.446A5 5 0 0 1 5 3h6V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192m3.81.086a.5.5 0 0 1 .67.225A5 5 0 0 1 11 13H5v1.466a.25.25 0 0 1-.41.192l-2.36-1.966a.25.25 0 0 1 0-.384l2.36-1.966a.25.25 0 0 1 .41.192V12h6a4 4 0 0 0 3.585-5.777.5.5 0 0 1 .225-.67Z"
+          />
+        </svg>
+
+        <div id="player" class="d-flex align-items-center flex-grow-1 mx-3">
+          <span id="current-time">0:00</span>
+          <input type="range" class="form-range mx-2 progress-bar" />
+          <span id="duration-time">3:45</span>
+        </div>
+      </section>
+
+      <!-- Volume -->
+      <section class="d-flex align-items-center justify-content-center">
+        <!-- Queue -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-view-list me-3"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M3 4.5h10a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2m0 1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1zM1 2a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 2m0 12a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 14"
+          />
+        </svg>
+        <!-- dispositivi -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="15"
+          height="15"
+          fill="currentColor"
+          class="bi bi-pc-display me-3"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8 1a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1zm1 13.5a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0m2 0a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0M9.5 1a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zM9 3.5a.5.5 0 0 0 .5.5h5a.5.5 0 0 0 0-1h-5a.5.5 0 0 0-.5.5M1.5 2A1.5 1.5 0 0 0 0 3.5v7A1.5 1.5 0 0 0 1.5 12H6v2h-.5a.5.5 0 0 0 0 1H7v-4H1.5a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5H7V2z"
+          />
+        </svg>
+
+        <!-- Volume icon -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="25"
+          height="25"
+          fill="currentColor"
+          class="bi bi-volume-down"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M9 4a.5.5 0 0 0-.812-.39L5.825 5.5H3.5A.5.5 0 0 0 3 6v4a.5.5 0 0 0 .5.5h2.325l2.363 1.89A.5.5 0 0 0 9 12zM6.312 6.39 8 5.04v5.92L6.312 9.61A.5.5 0 0 0 6 9.5H4v-3h2a.5.5 0 0 0 .312-.11M12.025 8a4.5 4.5 0 0 1-1.318 3.182L10 10.475A3.5 3.5 0 0 0 11.025 8 3.5 3.5 0 0 0 10 5.525l.707-.707A4.5 4.5 0 0 1 12.025 8"
+          />
+        </svg>
+
+        <div class="d-flex align-items-center">
+          <i class="fas fa-volume-down"></i>
+          <input
+            id="volume"
+            type="range"
+            class="form-range mx-2"
+            style="width: 80px"
+          />
+          <i class="fas fa-volume-up"></i>
+        </div>
+
+        <!-- full screen icon -->
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="13"
+          height="13"
+          fill="currentColor"
+          class="bi bi-arrows-angle-expand ms-2"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707m4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707"
+          />
+        </svg>
+      </section>
     </div>
 
     <script

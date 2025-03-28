@@ -4,9 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Spotify</title>
-    <link rel="stylesheet" href="./assets/custom-bootstrap.css" />
-
-    <!-- stile per la PLAY BAR -->
+    <link href="./assets/custom-bootstrap.css" rel="stylesheet" />
     <style>
       ul li {
         transition: background-color 0.3s ease, color 0.3s ease;
@@ -40,225 +38,64 @@
       .custom-scroll::-webkit-scrollbar-track {
         background-color: #000000;
       }
-      .rotate-90 {
-        transform: rotate(90deg);
+      .card {
+        background-color: #212529;
+      }
+      .card:hover {
+        background-color: #32383e;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      .inputpower::placeholder {
+        color: #afafaf;
+        opacity: 1;
+      }
+
+      .inputpower::-ms-input-placeholder {
+        color: #afafaf;
+      }
+      .rotationnn {
+        transform: rotate(20deg) translateX(23px);
+      }
+      .colore1 {
+        background-color: #de3600;
+      }
+      .colore2 {
+        background-color: #1e3264;
+      }
+      .colore3 {
+        background-color: #e8125c;
+      }
+      .colore4 {
+        background-color: #158a08;
+      }
+      .colore5 {
+        background-color: #bc5800;
+      }
+      .colore6 {
+        background-color: #d84000;
+      }
+      .colore7 {
+        background-color: #e1118b;
+      }
+      .colore8 {
+        background-color: #8c67ac;
+      }
+      .boxshadowcard {
+        box-shadow: 1px 3px 1px 1px #00000073;
+      }
+      .containercard {
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .containercard:hover {
+        transform: scale(1.2);
+        z-index: 3;
+        cursor: pointer;
       }
     </style>
   </head>
-  <body class="bg-dark">
-    <!-- DESKTOP PLAYER -->
-    <div
-      id="nav-player"
-      class="player-bar d-flex justify-content-between align-items-center text-white bg-dark2 p-2 user-select-none col-12 fixed-bottom z-2 d-none"
-    >
-      <div class="d-flex align-items-center me-5">
-        <img
-          id="albumcover-playnav"
-          alt="Album Cover"
-          class="rounded me-2"
-          width="50"
-        />
-        <div>
-          <div class="fw-bold">
-            <span id="songTitle-playnav">Mercury</span>
-          </div>
-          <div class="text-white">
-            <span id="artistname-playnav"> Imagine Dragons </span>
-          </div>
-        </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="currentColor"
-          class="bi bi-heart ms-3"
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"
-          />
-        </svg>
-      </div>
-
-      <section class="w-50 text-center">
-        <!-- Shuffle -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="currentColor"
-          class="bi bi-shuffle me-3"
-          viewBox="0 0 16 16"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.6 9.6 0 0 0 7.556 8a9.6 9.6 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.6 10.6 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.6 9.6 0 0 0 6.444 8a9.6 9.6 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5"
-          />
-          <path
-            d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192m0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192"
-          />
-        </svg>
-
-        <!-- Skip start -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="25"
-          height="25"
-          fill="currentColor"
-          class="bi bi-skip-start-fill me-3"
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="M4 4a.5.5 0 0 1 1 0v3.248l6.267-3.636c.54-.313 1.232.066 1.232.696v7.384c0 .63-.692 1.01-1.232.697L5 8.753V12a.5.5 0 0 1-1 0z"
-          />
-        </svg>
-        <!-- play button -->
-        <button class="btn-custom5 mb-2" id="button-play-bar">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="25"
-            height="25"
-            fill="currentColor"
-            class="bi bi-play-fill"
-            viewBox="0 0 16 16"
-            id="button-play-bar-play"
-          >
-            <path
-              d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"
-            />
-          </svg>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="25"
-            height="25"
-            fill="currentColor"
-            class="bi bi-pause-fill d-none"
-            viewBox="0 0 16 16"
-            id="button-play-bar-paused"
-          >
-            <path
-              d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5m5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5"
-            />
-          </svg>
-        </button>
-
-        <!-- Skip end -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="25"
-          height="25"
-          fill="currentColor"
-          class="bi bi-skip-end-fill ms-3"
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="M12.5 4a.5.5 0 0 0-1 0v3.248L5.233 3.612C4.693 3.3 4 3.678 4 4.308v7.384c0 .63.692 1.01 1.233.697L11.5 8.753V12a.5.5 0 0 0 1 0z"
-          />
-        </svg>
-
-        <!-- Loop -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="currentColor"
-          class="bi bi-repeat ms-3"
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="M11 5.466V4H5a4 4 0 0 0-3.584 5.777.5.5 0 1 1-.896.446A5 5 0 0 1 5 3h6V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192m3.81.086a.5.5 0 0 1 .67.225A5 5 0 0 1 11 13H5v1.466a.25.25 0 0 1-.41.192l-2.36-1.966a.25.25 0 0 1 0-.384l2.36-1.966a.25.25 0 0 1 .41.192V12h6a4 4 0 0 0 3.585-5.777.5.5 0 0 1 .225-.67Z"
-          />
-        </svg>
-
-        <div id="player" class="d-flex align-items-center flex-grow-1 mx-3">
-          <span id="current-time">0:00</span>
-          <input
-            type="range"
-            class="form-range mx-2 progress-bar"
-            id="progressbar"
-          />
-          <audio controls id="audio-player" style="height: 50px" class="d-none">
-            <source type="audio/mpeg" />
-          </audio>
-          <span id="duration-time">3:45</span>
-        </div>
-      </section>
-
-      <!-- Volume -->
-      <section class="d-flex align-items-center justify-content-center">
-        <!-- Queue -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="currentColor"
-          class="bi bi-view-list me-3"
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="M3 4.5h10a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2m0 1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1zM1 2a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 2m0 12a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 14"
-          />
-        </svg>
-        <!-- dispositivi -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="15"
-          height="15"
-          fill="currentColor"
-          class="bi bi-pc-display me-3"
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="M8 1a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1zm1 13.5a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0m2 0a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0M9.5 1a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zM9 3.5a.5.5 0 0 0 .5.5h5a.5.5 0 0 0 0-1h-5a.5.5 0 0 0-.5.5M1.5 2A1.5 1.5 0 0 0 0 3.5v7A1.5 1.5 0 0 0 1.5 12H6v2h-.5a.5.5 0 0 0 0 1H7v-4H1.5a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5H7V2z"
-          />
-        </svg>
-
-        <!-- Volume icon -->
-        <div class="d-flex flex-column-reverse flex-md-row">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="25"
-            height="25"
-            fill="currentColor"
-            class="bi bi-volume-down"
-            viewBox="0 0 16 16"
-            id="volume"
-          >
-            <path
-              d="M9 4a.5.5 0 0 0-.812-.39L5.825 5.5H3.5A.5.5 0 0 0 3 6v4a.5.5 0 0 0 .5.5h2.325l2.363 1.89A.5.5 0 0 0 9 12zM6.312 6.39 8 5.04v5.92L6.312 9.61A.5.5 0 0 0 6 9.5H4v-3h2a.5.5 0 0 0 .312-.11M12.025 8a4.5 4.5 0 0 1-1.318 3.182L10 10.475A3.5 3.5 0 0 0 11.025 8 3.5 3.5 0 0 0 10 5.525l.707-.707A4.5 4.5 0 0 1 12.025 8"
-            />
-          </svg>
-
-          <div class="d-flex align-items-center">
-            <i class="fas fa-volume-down"></i>
-            <input
-              id="volume-slider"
-              type="range"
-              class="form-range mx-2"
-              style="width: 80px"
-            />
-            <i class="fas fa-volume-up"></i>
-          </div>
-        </div>
-        <!-- full screen icon -->
-
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="13"
-          height="13"
-          fill="currentColor"
-          class="bi bi-arrows-angle-expand ms-2"
-          viewBox="0 0 16 16"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707m4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707"
-          />
-        </svg>
-      </section>
-    </div>
-
-    <div class="container-fluid" style="padding-bottom: 100px">
+  <body>
+    <div class="container-fluid">
       <div class="row">
         <!-- BARRA SINISTRA -->
         <nav
@@ -483,139 +320,226 @@
             </div>
           </div>
         </nav>
-        <!--centro-->
-        <article class="col-md-7 col-lg-7 col-12" id="album-details">
-          <!-- Card Section -->
-          <section class="mb-4">
-            <!-- Sezione 1 -->
-            <section class="mb-3">
-              <div class="d-flex justify-content-between">
-                <div class="col-6 col-md-6 mb-2 mb-md-0">
-                  <div class="d-flex w-100">
-                    <button
-                      onclick="history.back()"
-                      class="btn btn-light me-2 bg-transparent border-0 text-light-emphasis"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="25"
-                        height="25"
-                        fill="currentColor"
-                        class="bi bi-arrow-left-circle-fill"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"
-                        />
-                      </svg>
-                    </button>
-                    <button
-                      onclick="history.forward()"
-                      class="btn me-2 bg-transparent border-0 text-light-emphasis"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="25"
-                        height="25"
-                        fill="currentColor"
-                        class="bi bi-arrow-right-circle-fill"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                <div class="col-6 col-md-6 text-md-end">
-                  <select class="form-select bg-black text-light rounded-5">
-                    <option selected>Riccardo Sangermano</option>
-                    <option value="1">Pierattilio Correale</option>
-                    <option value="2">Chiara Sanasi</option>
-                    <option value="3">Pietro sorbo</option>
-                    <option value="3">Alessandro di Giannantonio</option>
-                  </select>
-                </div>
-              </div>
-            </section>
-            <div>
-              <div
-                class="d-flex align-items-md-end align-items-start flex-column flex-md-row"
-              >
-                <div class="col-md-5 col-lg-4 col-12">
-                  <img
-                    src=""
-                    class="img-fluid w-100"
-                    alt="Immagine della card"
-                    id="cover-album"
-                    crossorigin="anonymous"
-                  />
-                </div>
-                <div class="col-md-7 col-lg-8 px-3 px-lg-4 py-3 py-md-0">
-                  <div class="card-body d-flex flex-column">
-                    <p class="text-white fs-10">ALBUM</p>
-                    <h1
-                      class="text-white display-6 fw-semibold"
-                      id="album-title"
-                    ></h1>
-                    <a class="text-white text-decoration-none" id="artist">
-                      <span id="time" class="text-white"></span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- cosa c'è nella sezione tracce album  -->
-
-          <section class="text-light py-2 border-bottom border-1 border-light">
-            <div class="container">
-              <div class="row">
-                <div class="col-1" id="numero-traccia">#</div>
-                <div class="col-2 fw-semibold" id="titolo-traccia">Titolo</div>
-                <div class="col-9 d-flex justify-content-end" id="time-traccia">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-clock"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"
-                    />
-                    <path
-                      d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </section>
-          <!-- tracce album-->
-          <section class="text-light py-2">
-            <div class="container" id="tracks">
-              <!-- QUESTA PARTE LA CREO IN ALBUM.JS -->
-              <!-- <div class="row align-content-center">
-                <div class="col-1" id="numero-traccia">1</div>
-                <div class="d-flex flex-column col-2">
-                  <div class="fw-semibold" id="titolo-traccia">titolo</div>
-                  <div id="artist-name">artista</div>
-                </div>
-
-                <div class="col-9 d-flex justify-content-end" id="time-traccia">
-                  3
-                </div> -->
-            </div>
-          </section>
-        </article>
-        <!-- Chiusura dell'elemento article -->
-        <div
-          class="col-md-2 col-lg-2 d-none d-md-block bg-black text-white min-vh-100"
+        <!-- BARRA CENTRALE -->
+        <article
+          class="col-md-9 col-lg-7 min-vh-100 bg-dark p-4 d-flex flex-column"
         >
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <h3 class="text-white">Cerca</h3>
+                <form class="d-flex" role="search" id="myForm">
+                  <input
+                    class="form-control me-2 bg-secondary inputpower text-white"
+                    type="search"
+                    placeholder="Cosa vuoi ascoltare?"
+                    aria-label="Search"
+                    id="inputarget"
+                  />
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="row my-5 justify-content-center" id="cardsearch"></div>
+          <h4 class="text-center text-white mb-5">Sfoglia tutto</h4>
+          <div class="container">
+            <div class="row g-5 d-flex">
+              <div
+                class="col-xxl-3 col-md-6 col-lg-6 col-xl-4 col-12 ms-5 ms-sm-0 col-sm-6 containercard"
+              >
+                <div
+                  class="colore1 position-relative overflow-hidden rounded-3"
+                  style="height: 130px; width: 200px"
+                >
+                  <h3 class="text-white p-3">Podcast</h3>
+                  <div
+                    class="rotationnn position-absolute bottom-0 end-0"
+                    style="width: 70px; height: 70px"
+                  >
+                    <img
+                      class="rounded-3 w-100 h-100 boxshadowcard"
+                      src="./assets/imgs/search/image-2.jpg"
+                      style="object-fit: cover"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-xxl-3 col-md-6 col-lg-6 col-xl-4 col-12 ms-5 ms-sm-0 col-sm-6 containercard"
+              >
+                <div
+                  class="colore2 position-relative overflow-hidden rounded-3"
+                  style="height: 130px; width: 200px"
+                >
+                  <h3 class="text-white p-3">Create per te</h3>
+                  <div
+                    class="rotationnn position-absolute bottom-0 end-0"
+                    style="width: 70px; height: 70px"
+                  >
+                    <img
+                      class="rounded-3 w-100 h-100 boxshadowcard"
+                      src="./assets/imgs/search/image-42.png"
+                      style="object-fit: cover"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-xxl-3 col-md-6 col-lg-6 col-xl-4 col-12 ms-5 ms-sm-0 col-sm-6 containercard"
+              >
+                <div
+                  class="colore3 position-relative overflow-hidden rounded-3"
+                  style="height: 130px; width: 200px"
+                >
+                  <h3 class="text-white p-3">Nuove uscite</h3>
+                  <div
+                    class="rotationnn position-absolute bottom-0 end-0"
+                    style="width: 70px; height: 70px"
+                  >
+                    <img
+                      class="rounded-3 w-100 h-100 boxshadowcard"
+                      src="./assets/imgs/search/image-26.jpg"
+                      style="object-fit: cover"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-xxl-3 col-md-6 col-lg-6 col-xl-4 col-12 ms-5 ms-sm-0 col-sm-6 containercard"
+              >
+                <div
+                  class="colore4 position-relative overflow-hidden rounded-3"
+                  style="height: 130px; width: 200px"
+                >
+                  <h3 class="text-white p-3">Pop</h3>
+                  <div
+                    class="rotationnn position-absolute bottom-0 end-0"
+                    style="width: 70px; height: 70px"
+                  >
+                    <img
+                      class="rounded-3 w-100 h-100 boxshadowcard"
+                      src="./assets/imgs/search/image-47.jpg"
+                      style="object-fit: cover"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-xxl-3 col-md-6 col-lg-6 col-xl-4 col-12 ms-5 ms-sm-0 col-sm-6 containercard"
+              >
+                <div
+                  class="colore5 position-relative overflow-hidden rounded-3"
+                  style="height: 130px; width: 200px"
+                >
+                  <h3 class="text-white p-3">Hip Hop</h3>
+                  <div
+                    class="rotationnn position-absolute bottom-0 end-0"
+                    style="width: 70px; height: 70px"
+                  >
+                    <img
+                      class="rounded-3 w-100 h-100 boxshadowcard"
+                      src="./assets/imgs/search/image-49.jpg"
+                      style="object-fit: cover"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-xxl-3 col-md-6 col-lg-6 col-xl-4 col-12 ms-5 ms-sm-0 col-sm-6 containercard"
+              >
+                <div
+                  class="colore6 position-relative overflow-hidden rounded-3"
+                  style="height: 130px; width: 200px"
+                >
+                  <h3 class="text-white p-3">Dance / <br />Elettronica</h3>
+                  <div
+                    class="rotationnn position-absolute bottom-0 end-0"
+                    style="width: 70px; height: 70px"
+                  >
+                    <img
+                      class="rounded-3 w-100 h-100 boxshadowcard"
+                      src="./assets/imgs/search/image-52.jpg"
+                      style="object-fit: cover"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-xxl-3 col-md-6 col-lg-6 col-xl-4 col-12 ms-5 ms-sm-0 col-sm-6 containercard"
+              >
+                <div
+                  class="colore7 position-relative overflow-hidden rounded-3"
+                  style="height: 130px; width: 200px"
+                >
+                  <h3 class="text-white p-3">Latina</h3>
+                  <div
+                    class="rotationnn position-absolute bottom-0 end-0"
+                    style="width: 70px; height: 70px"
+                  >
+                    <img
+                      class="rounded-3 w-100 h-100 boxshadowcard"
+                      src="./assets/imgs/search/image-5.jpg"
+                      style="object-fit: cover"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-xxl-3 col-md-6 col-lg-6 col-xl-4 col-12 ms-5 ms-sm-0 col-sm-6 containercard"
+              >
+                <div
+                  class="colore8 position-relative overflow-hidden rounded-3"
+                  style="height: 130px; width: 200px"
+                >
+                  <h3 class="text-white p-3">Classifiche</h3>
+                  <div
+                    class="rotationnn position-absolute bottom-0 end-0"
+                    style="width: 70px; height: 70px"
+                  >
+                    <img
+                      class="rounded-3 w-100 h-100 boxshadowcard"
+                      src="./assets/imgs/search/image-14.jpg"
+                      style="object-fit: cover"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- BARRA DESTRA -->
+        <div class="col-lg-2 d-none d-sm-block bg-black text-white min-vh-100">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h6 class="mb-0">Attività Amici</h6>
+            <div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-people-fill me-2"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-x-lg"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
+                />
+              </svg>
+            </div>
+          </div>
+
           <div class="container">
             <div class="card">
               <div class="card-body row bg-black text-white position-relative">
@@ -785,6 +709,7 @@
                         d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"
                       />
                     </svg>
+
                     <p class="m-0 ml-2" style="font-size: 7px">
                       Hotline bling - Drake
                     </p>
@@ -808,9 +733,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.2/color-thief.umd.js"></script>
-
-    <script src="./script/album.js"></script>
-    <script src="./script/nav-bar.js"></script>
+    <script src="./script/Search.js"></script>
   </body>
 </html>
