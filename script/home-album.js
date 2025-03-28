@@ -7,7 +7,6 @@ const artisti = [
   "gorillaz",
   "beatles",
   "eminem",
-  "pinguinitatticinucleari",
   "billieeilish",
   "lordes",
   "greenday",
@@ -47,7 +46,15 @@ const getAlbumCard = function () {
 
         const albumHome = document.getElementById("album-home")
         const cardAlbum = document.createElement("div")
-        cardAlbum.classList.add("card", "border-0", "p-3", "col-4")
+        cardAlbum.classList.add(
+          "card",
+          "border-0",
+          "p-3",
+          "col-xl-3",
+          "col-lg-4",
+          "col-md-6",
+          "col-12"
+        )
         cardAlbum.innerHTML = `
         <img
                 src="${albumCover}"
@@ -56,7 +63,7 @@ const getAlbumCard = function () {
             
               />
               <div class="card-body py-3 px-0">
-                <a class="card-title text-white text-decoration-none fs-4 fw-semibold d-block" href="./album2.html?id=${albumId}">${albumTitle}</a>
+                <a class="card-title text-white text-decoration-none fs-5 fw-semibold d-block" href="./album2.html?id=${albumId}">${albumTitle}</a>
                 <a href="./artist.html?id=${artistID}" class="text-secondary text-decoration-none fs-6"
                   >${albumArtist}</a
                 >

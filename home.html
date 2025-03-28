@@ -74,26 +74,29 @@
         height: 40px;
         object-fit: cover;
       }
-
+      /* .playlist-card {
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+      }
+      .playlist-card img {
+        width: 100%;
+        height: auto;
+      }
+      .playlist-card .card-body {
+        padding: 15px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+      }
+      .playlist-card .card-body h5 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+      .playlist-card .card-body p {
+        font-size: 0.9rem;
+      } */
       #playlist-card {
         width: 300px !important;
-      }
-
-      ul li {
-        transition: background-color 0.3s ease, color 0.3s ease;
-      }
-
-      ul li:hover {
-        background-color: rgb(68, 68, 68);
-        cursor: pointer;
-      }
-      nav p {
-        transition: background-color 0.3s ease, color 0.3s ease;
-      }
-
-      nav p:hover {
-        background-color: rgb(68, 68, 68);
-        cursor: pointer;
       }
     </style>
   </head>
@@ -101,15 +104,14 @@
   <body>
     <div class="container-fluid">
       <div class="row">
-        <!-- BARRA SINISTRA -->
         <nav
           class="col-md-3 col-lg-3 d-none d-md-block bg-black text-white min-vh-100 p-3"
         >
           <div
-            class="sticky-top flex-grow-1 overflow-auto z-2 position-relative list-group"
+            class="sticky-top flex-grow-1 overflow-auto z-2 position-relative"
           >
             <ul class="nav flex-column">
-              <li class="nav-item rounded-bottom-3 rounded-top-3">
+              <li class="nav-item">
                 <a href="#" class="nav-link text-white">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -125,14 +127,14 @@
                   </svg>
                 </a>
               </li>
-              <li class="nav-item rounded-bottom-3 rounded-top-3">
-                <a href="./home.html" class="nav-link text-white">
+              <li class="nav-item">
+                <a href="#" class="nav-link text-white">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
                     fill="currentColor"
-                    class="bi bi-house-door-fill me-2"
+                    class="bi bi-house-door-fill"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -142,14 +144,14 @@
                   Home</a
                 >
               </li>
-              <li class="nav-item rounded-bottom-3 rounded-top-3">
-                <a href="./Search.html" class="nav-link text-white">
+              <li class="nav-item">
+                <a href="#" class="nav-link text-white">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
                     fill="currentColor"
-                    class="bi bi-search me-2"
+                    class="bi bi-search"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -159,14 +161,14 @@
                   Cerca</a
                 >
               </li>
-              <li class="nav-item rounded-bottom-3 rounded-top-3">
+              <li class="nav-item">
                 <a href="#" class="nav-link text-white">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
                     fill="currentColor"
-                    class="bi bi-music-note-list me-2"
+                    class="bi bi-music-note-list"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -184,14 +186,14 @@
                   La tua libreria</a
                 >
               </li>
-              <li class="nav-item mt-3 rounded-bottom-3 rounded-top-3">
+              <li class="nav-item mt-3">
                 <a href="#" class="nav-link text-white">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
                     fill="currentColor"
-                    class="bi bi-plus-square-fill me-2"
+                    class="bi bi-plus-square-fill"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -201,36 +203,53 @@
                   Crea playlist</a
                 >
               </li>
-              <li class="nav-item rounded-bottom-3 rounded-top-3">
+              <li class="nav-item">
                 <a href="#" class="nav-link text-white">
-                  <img
-                    src="https://alfasareekkan.github.io/spotify/assets/img/liked-songs-300.png"
-                    alt="Icona"
-                    style="width: 18px; height: 18px"
-                    class="me-2"
-                  />
-
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-heart-pulse-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M1.475 9C2.702 10.84 4.779 12.871 8 15c3.221-2.129 5.298-4.16 6.525-6H12a.5.5 0 0 1-.464-.314l-1.457-3.642-1.598 5.593a.5.5 0 0 1-.945.049L5.889 6.568l-1.473 2.21A.5.5 0 0 1 4 9z"
+                    />
+                    <path
+                      d="M.88 8C-2.427 1.68 4.41-2 7.823 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C11.59-2 18.426 1.68 15.12 8h-2.783l-1.874-4.686a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8z"
+                    />
+                  </svg>
                   Brani che ti piacciono
                 </a>
               </li>
-              <li class="nav-item rounded-bottom-3 rounded-top-3">
+              <li class="nav-item">
                 <a
                   href="#"
-                  class="nav-link text-white border-bottom border-secondary"
+                  class="nav-link text-white border-bottom border-white"
                 >
-                  <img
-                    src="https://alan-tomaz.github.io/Spotify-Clone/img/your-episodes.png"
-                    alt="Icona"
-                    style="width: 18px; height: 18px"
-                    class="me-2"
-                  />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-bookmarks"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1z"
+                    />
+                    <path
+                      d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1"
+                    />
+                  </svg>
                   I tuoi episodi</a
                 >
               </li>
             </ul>
           </div>
           <div
-            class="z-1 position-sticky overflow-auto custom-scroll border-bottom border-secondary"
+            class="z-1 position-sticky overflow-auto custom-scroll"
             style="height: 500px"
           >
             <div
@@ -238,95 +257,31 @@
               data-bs-target="#navbar-example2"
               data-bs-root-margin="0px 0px -40%"
               data-bs-smooth-scroll="true"
-              class="scrollspy-example bg-black m-1 text-white-50 small fs-6 m-1"
+              class="scrollspy-example bg-black p-3 rounded-2"
               tabindex="0"
-              style="font-size: 6px"
+              id="scrollspy"
             >
-              <p class="m-1 rounded-bottom-3 rounded-top-3">
-                early stage emily syndrome
-              </p>
-              <p class="m-1 rounded-bottom-3 rounded-top-3">Be The Young</p>
-              <p class="m-1 rounded-bottom-3 rounded-top-3">saggio vibes</p>
-              <p class="m-1 rounded-bottom-3 rounded-top-3">
-                main character energy
-              </p>
-              <p class="m-1 rounded-bottom-3 rounded-top-3">
-                that fucking mood
-              </p>
-              <p class="m-1 rounded-bottom-3 rounded-top-3">
-                VEE CARLOTTA E GIACOMO
-              </p>
-              <p class="m-1 rounded-bottom-3 rounded-top-3">
-                An emily Winchester kind of mood
-              </p>
-              <p class="m-1 rounded-bottom-3 rounded-top-3">landning page</p>
-              <p class="m-1 rounded-bottom-3 rounded-top-3">2021 lol</p>
-              <p class="m-1 rounded-bottom-3 rounded-top-3">
-                cosa cazzo vuol dire
-              </p>
-              <p class="m-1 1875rem">honey and glass</p>
-              <p class="m-1 rounded-bottom-3 rounded-top-3">
-                (revenge) training arc
-              </p>
-              <p class="m-1 rounded-bottom-3 rounded-top-3">
-                minecratf & nintendo switch
-              </p>
-              <p class="m-1 rounded-bottom-3 rounded-top-3">
-                silvano d'orba? I hardly know her
-              </p>
-              <p class="m-1 rounded-bottom-3 rounded-top-3">Culo 2022</p>
-              <p class="m-1 rounded-bottom-3 rounded-top-3">
-                Frah Quintale mix
-              </p>
-              <p class="m-1 rounded-bottom-3 rounded-top-3">
-                Francesco Guccini MIX
-              </p>
-
-              <p class="m-1 rounded-bottom-3 rounded-top-3">
-                early stage emily syndrome
-              </p>
-              <p class="m-1 rounded-bottom-3 rounded-top-3">Be The Young</p>
-              <p class="m-1 rounded-bottom-3 rounded-top-3">saggio vibes</p>
-              <p class="m-1 rounded-bottom-3 rounded-top-3">
-                main character energy
-              </p>
-              <p class="m-1 rounded-bottom-3 rounded-top-3">
-                that fucking mood
-              </p>
-              <p class="m-1 rounded-bottom-3 rounded-top-3">
-                VEE CARLOTTA E GIACOMO
-              </p>
-              <p class="m-1 rounded-bottom-3 rounded-top-3">
-                An emily Winchester kind of mood
-              </p>
-              <p class="m-1 rounded-bottom-3 rounded-top-3">landning page</p>
-              <p class="m-1 rounded-bottom-3 rounded-top-3">2021 lol</p>
-              <p class="m-1 rounded-bottom-3 rounded-top-3">
-                cosa cazzo vuol dire
-              </p>
-              <p class="m-1 1875rem">honey and glass</p>
-              <p class="m-1 rounded-bottom-3 rounded-top-3">
-                (revenge) training arc
-              </p>
-              <p class="m-1 rounded-bottom-3 rounded-top-3">
-                minecratf & nintendo switch
-              </p>
-              <p class="m-1 rounded-bottom-3 rounded-top-3">
-                silvano d'orba? I hardly know her
-              </p>
-              <p class="m-1 rounded-bottom-3 rounded-top-3">Culo 2022</p>
-              <p class="m-1 rounded-bottom-3 rounded-top-3">
-                Frah Quintale mix
-              </p>
-              <p class="m-1 rounded-bottom-3 rounded-top-3">
-                Francesco Guccini MIX
-              </p>
+              <p>early stage emily syndrome</p>
+              <p>Be The Young</p>
+              <p>saggio vibes</p>
+              <p>main character energy</p>
+              <p>that fucking mood</p>
+              <p>VEE CARLOTTA E GIACOMO</p>
+              <p>An emily Winchester kind of mood</p>
+              <p>landning page</p>
+              <p>2021 lol</p>
+              <p>cosa cazzo vuol dire</p>
+              <p>honey and glass</p>
+              <p>(revenge) training arc</p>
+              <p>minecratf & nintendo switch</p>
+              <p>silvano d'orba? I hardly know her</p>
+              <p>Culo 2022</p>
+              <p>Frah Quintale mix</p>
             </div>
           </div>
         </nav>
-        <!-- BARRA CENTRALE -->
         <article
-          class="col-md-9 col-lg-7 min-vh-100 bg-dark p-4 d-flex flex-column"
+          class="col-md-7 col-lg-7 min-vh-100 bg-dark p-4 d-flex flex-column"
         >
           <div class="row align-items-center gx-0">
             <div class="col-12 col-md-6 mb-2 mb-md-0">
@@ -382,11 +337,19 @@
 
           <!-- CARD CENTRALE -->
           <div
-            class="container-fluid p-5 position-relative rounded-2 my-5"
+            id="collapseExample"
+            class="container-fluid p-5 position-relative rounded-3 my-5"
             style="background: linear-gradient(to top, black, #2c2c2c)"
           >
-            <div class="d-flex align-items-center">
-              <button class="btn-custom4 position-absolute top-0 end-0 m-2">
+            <div class="d-flex align-items-center collapse show">
+              <!-- Aggiunto "show" -->
+              <button
+                class="bg-dark border-0 text-light-emphasis position-absolute rounded-5 top-0 end-0 m-4 px-3 py-2"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseExample"
+                aria-expanded="true"
+                aria-controls="collapseExample"
+              >
                 Nascondi sezione
               </button>
               <img
@@ -407,75 +370,142 @@
 
           <!-- ALBUM CHE POTREBBERO PIACERTI : PARTE FATTA IN JS -->
 
-          <div class="container">
+          <div>
             <div class="row">
               <h4 class="text-white my-4 col-12">
                 Album che potrebbero piacerti
               </h4>
-              <div class="d-flex flex-wrap" id="album-home"></div>
+              <div class="d-flex flex-wrap gap-" id="album-home"></div>
             </div>
           </div>
 
-          <!-- CARD PLAYLIST -->
+          <!-- ALTRO DI CIO' CHE TI PIACE -->
 
-          <div class="container mt-5">
-            <div class="row d-flex g-0">
-              <div class="col-4">
-                <div
-                  class="card-playlist card text-white container d-grid"
-                  id="playlist-card"
-                >
-                  <div class="col-4 p-0 g-0">
-                    <div class="card-body">
-                      <div class="d-flex align-items-center gap-3">
-                        <div class="d-flex">
-                          <div class="d-flex flex-column">
-                            <img
-                              src="./assets/imgs/main/image-12.jpg"
-                              alt=""
-                              class="little-img"
-                            />
-                            <img
-                              src="./assets/imgs/main/image-13.jpg"
-                              alt=""
-                              class="little-img"
-                            />
-                          </div>
-                          <div class="d-flex flex-column">
-                            <img
-                              src="./assets/imgs/main/image-14.jpg"
-                              alt=""
-                              class="little-img"
-                            />
-                            <img
-                              src="./assets/imgs/main/image-15.jpg"
-                              alt=""
-                              class="little-img"
-                            />
-                          </div>
-                          <div class="d-inline-block">
-                            <p class="text-white card-text ms-2">
-                              Be The Young
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+          <div>
+            <div class="row">
+              <h4 class="text-white my-4 col-12">Altro di ciò che ti piace</h4>
+              <div class="d-flex flex-wrap gap-">
+                <div class="border-0 p-3 col-xl-3 col-lg-4 col-md-6 col-12">
+                  <img
+                    src="./assets/imgs/main/image-1.jpg"
+                    class="card-img"
+                    alt="..."
+                  />
+                  <div class="card-body py-3 px-0">
+                    <a
+                      class="card-title text-white text-decoration-none fs-4 fw-semibold d-block"
+                      href="./album2.html?id=${albumId}"
+                      >BASTA</a
+                    >
+                    <a
+                      href="./artist.html?id=${artistID}"
+                      class="text-secondary text-decoration-none fs-6"
+                      >Neima Ezza</a
+                    >
+                  </div>
+                </div>
+                <div class="border-0 p-3 col-xl-3 col-lg-4 col-md-6 col-12">
+                  <img
+                    src="./assets/imgs/main/image-2.jpg"
+                    class="card-img"
+                    alt="..."
+                  />
+                  <div class="card-body py-3 px-0">
+                    <a
+                      class="card-title text-white text-decoration-none fs-4 fw-semibold d-block"
+                      href="./album2.html?id=${albumId}"
+                      >POV : la tua estate è un film</a
+                    >
+                    <a
+                      href="./artist.html?id=${artistID}"
+                      class="text-secondary text-decoration-none fs-6"
+                      >Playlist</a
+                    >
+                  </div>
+                </div>
+                <div class="border-0 p-3 col-xl-3 col-lg-4 col-md-6 col-12">
+                  <img
+                    src="./assets/imgs/main/image-3.jpg"
+                    class="card-img"
+                    alt="..."
+                  />
+                  <div class="card-body py-3 px-0">
+                    <a
+                      class="card-title text-white text-decoration-none fs-4 fw-semibold d-block"
+                      href="./album2.html?id=${albumId}"
+                      >Massima Concentrazione</a
+                    >
+                    <a
+                      href="./artist.html?id=${artistID}"
+                      class="text-secondary text-decoration-none fs-6"
+                      >Playlist</a
+                    >
+                  </div>
+                </div>
+                <div class="border-0 p-3 col-xl-3 col-lg-4 col-md-6 col-12">
+                  <img
+                    src="./assets/imgs/main/image-4.jpg"
+                    class="card-img"
+                    alt="..."
+                  />
+                  <div class="card-body py-3 px-0">
+                    <a
+                      class="card-title text-white text-decoration-none fs-4 fw-semibold d-block"
+                      href="./album2.html?id=${albumId}"
+                      >Peaceful Piano</a
+                    >
+                    <a
+                      href="./artist.html?id=${artistID}"
+                      class="text-secondary text-decoration-none fs-6"
+                      >Playlist</a
+                    >
+                  </div>
+                </div>
+                <div class="border-0 p-3 col-xl-3 col-lg-4 col-md-6 col-12">
+                  <img
+                    src="./assets/imgs/main/image-5.jpg"
+                    class="card-img"
+                    alt="..."
+                  />
+                  <div class="card-body py-3 px-0">
+                    <a
+                      class="card-title text-white text-decoration-none fs-4 fw-semibold d-block"
+                      href="./album2.html?id=${albumId}"
+                      >Lofi beats</a
+                    >
+                    <a
+                      href="./artist.html?id=${artistID}"
+                      class="text-secondary text-decoration-none fs-6"
+                      >Playlist</a
+                    >
+                  </div>
+                </div>
+                <div class="border-0 p-3 col-xl-3 col-lg-4 col-md-6 col-12">
+                  <img
+                    src="./assets/imgs/main/image-6.jpg"
+                    class="card-img"
+                    alt="..."
+                  />
+                  <div class="card-body py-3 px-0">
+                    <a
+                      class="card-title text-white text-decoration-none fs-4 fw-semibold d-block"
+                      href="./album2.html?id=${albumId}"
+                      >Jazz Vibes</a
+                    >
+                    <a
+                      href="./artist.html?id=${artistID}"
+                      class="text-secondary text-decoration-none fs-6"
+                      >Playlist</a
+                    >
                   </div>
                 </div>
               </div>
             </div>
-
-            <div class="col-4">
-              <div class="card-playlist card text-white">
-                <img src="./assets/imgs/main/image-12.jpg" alt="" />
-                <p>Brani che ti piacciono</p>
-              </div>
-            </div>
           </div>
         </article>
-        <!-- BARRA DESTRA -->
-        <div class="col-lg-2 d-none d-sm-block bg-black text-white min-vh-100">
+        <div
+          class="col-md-2 col-lg-2 d-none d-sm-block bg-black text-white min-vh-100"
+        >
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h6 class="mb-0">Attività Amici</h6>
             <div>
@@ -880,68 +910,6 @@
         </svg>
       </section>
     </div>
-
-    <!-- NAV BAR MOBILE -->
-    <section
-      id="nav-mobile"
-      class="mt-5 text-white h-50 p-5 d-flex align-items-center justify-content-center w-25"
-    >
-      <!-- Home -->
-      <div
-        class="d-flex flex-column align-items-center justify-content-center me-5"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="25"
-          height="25"
-          fill="currentColor"
-          class="bi bi-house-door-fill"
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"
-          />
-        </svg>
-        <p>Home</p>
-      </div>
-
-      <!-- Cerca -->
-      <div
-        class="d-flex flex-column align-items-center justify-content-center me-5"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="25"
-          height="25"
-          fill="currentColor"
-          class="bi bi-search"
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
-          />
-        </svg>
-        <p>Search</p>
-      </div>
-
-      <div
-        class="d-flex flex-column align-items-center justify-content-center me-5"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="25"
-          height="25"
-          fill="currentColor"
-          class="bi bi-collection"
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5z"
-          />
-        </svg>
-        <p>Library</p>
-      </div>
-    </section>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
