@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spotify</title>
+    <link rel="stylesheet" href="./assets/custom-bootstrap.css" />
+    <link rel="stylesheet" href="./assets/css/Bottoni.css" />
+    <link rel="stylesheet" href="/assets/css/playlist.css" />
+  </head>
+  <body class="bg-dark">
+    <div class="container-fluid">
+      <div class="row">
+        <nav
+          class="col-md-3 col-lg-3 d-none d-md-block bg-black text-white min-vh-100 p-3"
+        >
+          <div
+            class="sticky-top flex-grow-1 overflow-auto z-2 position-relative"
+          >
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a href="#" class="nav-link text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-three-dots"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/home.html" class="nav-link text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-house-door-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"
+                    />
+                  </svg>
+                  Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-search"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+                    />
+                  </svg>
+                  Cerca</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-music-note-list"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2"
+                    />
+                    <path fill-rule="evenodd" d="M12 3v10h-1V3z" />
+                    <path
+                      d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1z"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5m0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5m0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5"
+                    />
+                  </svg>
+                  La tua libreria</a
+                >
+              </li>
+              <li class="nav-item mt-3">
+                <a href="/playlist.html" class="nav-link text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-plus-square-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"
+                    />
+                  </svg>
+                  Crea playlist</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-heart-pulse-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M1.475 9C2.702 10.84 4.779 12.871 8 15c3.221-2.129 5.298-4.16 6.525-6H12a.5.5 0 0 1-.464-.314l-1.457-3.642-1.598 5.593a.5.5 0 0 1-.945.049L5.889 6.568l-1.473 2.21A.5.5 0 0 1 4 9z"
+                    />
+                    <path
+                      d="M.88 8C-2.427 1.68 4.41-2 7.823 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C11.59-2 18.426 1.68 15.12 8h-2.783l-1.874-4.686a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8z"
+                    />
+                  </svg>
+                  Brani che ti piacciono
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="#"
+                  class="nav-link text-white border-bottom border-white"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-bookmarks"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1z"
+                    />
+                    <path
+                      d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1"
+                    />
+                  </svg>
+                  I tuoi episodi</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="z-1 position-sticky overflow-auto" style="height: 500px">
+            <div
+              data-bs-spy="scroll"
+              data-bs-target="#navbar-example2"
+              data-bs-root-margin="0px 0px -40%"
+              data-bs-smooth-scroll="true"
+              class="scrollspy-example bg-black p-3 rounded-2"
+              tabindex="0"
+              id="scrollspy"
+            >
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
+                error repudiandae dignissimos veniam consectetur! Possimus
+                quidem quaerat repellendus quam, impedit quis quos dolorum
+                perspiciatis officia, asperiores expedita! Ex, iure cumque!
+              </p>
+              <h4 id="scrollspyHeading1">First heading</h4>
+              <p>...</p>
+              <h4 id="scrollspyHeading2">Second heading</h4>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Distinctio possimus autem ducimus asperiores dolor totam hic
+                earum, doloribus temporibus voluptatibus quisquam dolorem
+                impedit quo vitae iusto? Vitae tempore accusantium soluta.
+              </p>
+              <h4 id="scrollspyHeading3">Third heading</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Ratione, dolorum, repudiandae cupiditate debitis, dicta quis
+                repellendus neque voluptates ex quas laboriosam blanditiis
+                quisquam vero libero. Explicabo impedit ad architecto nulla?
+              </p>
+              <h4 id="scrollspyHeading4">Fourth heading</h4>
+              <p>...</p>
+              <h4 id="scrollspyHeading5">Fifth heading</h4>
+              <p>...</p>
+            </div>
+            <!-- <ul class="nav flex-column">
+              <li class="nav-item">
+                <a href="#" class="nav-link text-white"
+                  >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Accusamus, illo quos vero modi, autem sunt earum sed vitae
+                  expedita soluta quis explicabo accusantium repellat quibusdam
+                  nam, incidunt hic consequuntur sint?</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link text-white"
+                  >Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Dolor, reiciendis doloribus illo illum magni rem voluptas vero
+                  a soluta explicabo cumque necessitatibus praesentium
+                  consectetur dolores libero repudiandae accusantium similique
+                  veniam!</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link text-white"
+                  >Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
+                  repellat, atque quis porro totam eius doloremque, tenetur
+                  consectetur accusamus dignissimos nemo rem ipsam illum ad ut
+                  vel, pariatur earum enim?</a
+                >
+              </li>
+            </ul> -->
+          </div>
+        </nav>
+        <!--centro-->
+        <article class="col-md-7 col-lg-7 col-12" id="album-details">
+          <!-- Card Section -->
+          <section class="mb-4">
+            <!-- Sezione 1 -->
+            <section class="mb-3">
+              <div class="row align-items-center gx-0">
+                <div class="col-12 col-md-6 mb-2 mb-md-0">
+                  <div class="d-flex w-100">
+                    <button
+                      class="my-button rounded-circle d-flex align-items-center justify-content-center me-2"
+                      style="width: 50px; height: 50px"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="25"
+                        height="25"
+                        fill="currentColor"
+                        class="bi bi-caret-left"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      class="my-button rounded-circle d-flex align-items-center justify-content-center"
+                      style="width: 50px; height: 50px"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="25"
+                        height="25"
+                        fill="currentColor"
+                        class="bi bi-caret-right"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 text-md-end">
+                  <select class="form-select bg-black text-light rounded-5">
+                    <option selected>Riccardo Sangermano</option>
+                    <option value="1">Pierattilio Correale</option>
+                    <option value="2">Chiara Sanasi</option>
+                    <option value="3">Pietro sorbo</option>
+                    <option value="4">Alessandro di Giannantonio</option>
+                  </select>
+                </div>
+              </div>
+            </section>
+          </section>
+
+          <!-- Titolo playlist -->
+          <section id="playlist-section" class="mb-4">
+            <div
+              id="playlist-div"
+              class="d-flex align-items-center justify-content-start"
+            >
+              <img src="/assets/imgs/main/playlist.png" alt="" />
+              <div>
+                <p class="ms-3 text-white mb-2">Public Playlist</p>
+                <h1 class="ms-3 fs-0 text-white font-3">My Playlist #1</h1>
+              </div>
+            </div>
+          </section>
+
+          <!-- cosa c'è nella sezione tracce album  -->
+          <section class="bg-secondary text-light py-2">
+            <div class="row align-items-center gx-0">
+              <div class="col-md-6 align-items-center">
+                <div class="d-flex w-100">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="45"
+                    height="45"
+                    fill="currentColor"
+                    class="bi bi-arrow-down-circle p-2"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z"
+                    />
+                  </svg>
+                  <button class="invisible-button ms-2 me-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      fill="currentColor"
+                      class="bi bi-person-plus"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5"
+                      />
+                    </svg>
+                  </button>
+
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="35"
+                    height="35"
+                    fill="currentColor"
+                    class="bi bi-three-dots me-2 mt-1"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="text-light py-2 border-bottom border-1 border-light">
+            <div class="container">
+              <div class="row">
+                <div class="col-1" id="numero-traccia">#</div>
+                <div class="col-2 fw-semibold" id="titolo-traccia">Titolo</div>
+                <div class="col-9 d-flex justify-content-end" id="time-traccia">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-clock"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"
+                    />
+                    <path
+                      d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </section>
+          <p class="text-white fs-4 font-3 mt-3">
+            Cerca qualcosa per la tua playlist
+          </p>
+          <!-- INSERIRE SEARCHBAR -->
+
+          <!-- tracce album-->
+          <section class="text-light py-2">
+            <div class="container" id="tracks">
+              <!-- QUESTA PARTE LA CREO IN ALBUM.JS -->
+            </div>
+          </section>
+        </article>
+
+        <!-- Chiusura dell'elemento article -->
+        <div
+          class="col-md-2 col-lg-2 d-none d-md-block bg-black text-white min-vh-100"
+        >
+          <div class="container">
+            <div class="card">
+              <div class="card-body row bg-black text-white position-relative">
+                <div class="col-2"></div>
+                <div class="col-8 container text-center">
+                  <p class="m-0" style="font-size: 10px">Chiara Sanasi</p>
+
+                  <div class="d-flex justify-content-center align-items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-bar-chart-fill"
+                      viewBox="0 0 16 16"
+                      style="width: 8px"
+                    >
+                      <path
+                        d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"
+                      />
+                    </svg>
+
+                    <p class="m-0 ml-2" style="font-size: 7px">
+                      Undecided - Saint JHN
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="col-2 position-absolute top-2 end-0 p-1"
+                  style="font-size: 6px"
+                >
+                  3 min
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="card">
+              <div class="card-body row bg-black text-white position-relative">
+                <div class="col-2"></div>
+                <div class="col-8 container text-center">
+                  <p class="m-0" style="font-size: 10px">
+                    Pierattilio Correale
+                  </p>
+
+                  <div class="d-flex justify-content-center align-items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-bar-chart-fill"
+                      viewBox="0 0 16 16"
+                      style="width: 8px"
+                    >
+                      <path
+                        d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"
+                      />
+                    </svg>
+
+                    <p class="m-0 ml-2" style="font-size: 7px">
+                      Cry for me - The Weeknd
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="col-2 position-absolute top-2 end-0 p-1"
+                  style="font-size: 6px"
+                >
+                  5 min
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="card">
+              <div class="card-body row bg-black text-white position-relative">
+                <div class="col-2"></div>
+                <div class="col-8 container text-center">
+                  <p class="m-0" style="font-size: 10px">Pietro Sorbo</p>
+
+                  <div class="d-flex justify-content-center align-items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-bar-chart-fill"
+                      viewBox="0 0 16 16"
+                      style="width: 8px"
+                    >
+                      <path
+                        d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"
+                      />
+                    </svg>
+
+                    <p class="m-0 ml-2" style="font-size: 7px">
+                      Dark Necessities - RHCP
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="col-2 position-absolute top-2 end-0 p-1"
+                  style="font-size: 6px"
+                >
+                  8 min
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="card">
+              <div class="card-body row bg-black text-white position-relative">
+                <div class="col-2"></div>
+                <div class="col-8 container text-center">
+                  <p class="m-0" style="font-size: 10px">Riccardo Sangermano</p>
+
+                  <div class="d-flex justify-content-center align-items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-bar-chart-fill"
+                      viewBox="0 0 16 16"
+                      style="width: 8px"
+                    >
+                      <path
+                        d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"
+                      />
+                    </svg>
+
+                    <p class="m-0 ml-2" style="font-size: 7px">
+                      Yonaguni - Bad Bunny
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="col-2 position-absolute top-2 end-0 p-1"
+                  style="font-size: 6px"
+                >
+                  6 min
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="card">
+              <div class="card-body row bg-black text-white position-relative">
+                <div class="col-2"></div>
+                <div class="col-8 container text-center">
+                  <p class="m-0 flex-nowrap" style="font-size: 10px">
+                    Alessando Di Giannantonio
+                  </p>
+
+                  <div class="d-flex justify-content-center align-items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-bar-chart-fill"
+                      viewBox="0 0 16 16"
+                      style="width: 8px"
+                    >
+                      <path
+                        d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"
+                      />
+                    </svg>
+                    <p class="m-0 ml-2" style="font-size: 7px">
+                      Hotline bling - Drake
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="col-2 position-absolute top-2 end-0 p-1"
+                  style="font-size: 6px"
+                >
+                  1 min
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.2/color-thief.umd.js"></script>
+    <script src="./script/heart.js"></script>
+    <script src="./script/album.js"></script>
+  </body>
+</html>
