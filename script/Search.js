@@ -7,7 +7,10 @@ myForm.addEventListener("submit", function (e) {
 });
 
 const searchAPI = function (inputvalue) {
-  if (!inputvalue) return;
+  if (!inputvalue) {
+    myRow.innerHTML = ``;
+    return;
+  }
 
   const eventsURL =
     "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
@@ -74,6 +77,6 @@ const searchAPI = function (inputvalue) {
     });
 };
 
-myInput.addEventListener("input", function () {
+myInput.addEventListener("keyup", function () {
   searchAPI(this.value);
 });
