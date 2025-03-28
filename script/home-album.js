@@ -2,12 +2,15 @@ const deezerUrl = "https://striveschool-api.herokuapp.com/api/deezer"
 const search = "search"
 
 const artisti = [
-  "pinguini",
   "queen",
-  "angelinamango",
+  "madonna",
   "gorillaz",
   "beatles",
   "eminem",
+  "pinguinitatticinucleari",
+  "billieeilish",
+  "lordes",
+  "greenday",
 ]
 
 const getAlbumCard = function () {
@@ -32,11 +35,11 @@ const getAlbumCard = function () {
         // const randomTrackIndex = Math.floor(Math.random() * 25)
         // console.log(randomTrackIndex)
 
-        albumTitle = data.data[0].album.title
-        albumId = data.data[0].album.id
-        albumArtist = data.data[0].artist.name
-        albumCover = data.data[0].album.cover_medium
-        artistID = data.data[0].artist.id
+        albumTitle = data.data[1].album.title
+        albumId = data.data[1].album.id
+        albumArtist = data.data[1].artist.name
+        albumCover = data.data[1].album.cover_medium
+        artistID = data.data[1].artist.id
 
         console.log(
           `ALBUM TITLE : ${albumTitle}, ALBUM ID : ${albumId}, ARIST NAME : ${albumArtist}, ALBUM COVER ${albumCover}`
