@@ -16,12 +16,39 @@
     />
 
     <style>
-      #scrollspy::-webkit-scrollbar {
-        width: 1000px !important;
+      ul li {
+        transition: background-color 0.3s ease, color 0.3s ease;
       }
-      #scrollspy::-webkit-scrollbar-track {
-        background-color: #121212;
+
+      ul li:hover {
+        background-color: rgb(68, 68, 68);
+        cursor: pointer;
       }
+      nav p {
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      nav p:hover {
+        background-color: rgb(68, 68, 68);
+        cursor: pointer;
+      }
+      .custom-scroll {
+        overflow-y: auto;
+        max-height: 300px;
+      }
+
+      .custom-scroll::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .custom-scroll::-webkit-scrollbar-thumb {
+        background-color: grey;
+      }
+
+      .custom-scroll::-webkit-scrollbar-track {
+        background-color: #000000;
+      }
+
       #events-row {
         padding: 0 !important;
         margin: 0 !important;
@@ -79,14 +106,15 @@
   <body>
     <div class="container-fluid">
       <div class="row">
+        <!-- BARRA SINISTRA -->
         <nav
           class="col-md-3 col-lg-3 d-none d-md-block bg-black text-white min-vh-100 p-3"
         >
           <div
-            class="sticky-top flex-grow-1 overflow-auto z-2 position-relative"
+            class="sticky-top flex-grow-1 overflow-auto z-2 position-relative list-group"
           >
             <ul class="nav flex-column">
-              <li class="nav-item">
+              <li class="nav-item rounded-bottom-3 rounded-top-3">
                 <a href="#" class="nav-link text-white">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -102,14 +130,14 @@
                   </svg>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link text-white">
+              <li class="nav-item rounded-bottom-3 rounded-top-3">
+                <a href="./home.html" class="nav-link text-white">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
                     fill="currentColor"
-                    class="bi bi-house-door-fill"
+                    class="bi bi-house-door-fill me-2"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -119,14 +147,14 @@
                   Home</a
                 >
               </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link text-white">
+              <li class="nav-item rounded-bottom-3 rounded-top-3">
+                <a href="./Search.html" class="nav-link text-white">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
                     fill="currentColor"
-                    class="bi bi-search"
+                    class="bi bi-search me-2"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -136,14 +164,14 @@
                   Cerca</a
                 >
               </li>
-              <li class="nav-item">
+              <li class="nav-item rounded-bottom-3 rounded-top-3">
                 <a href="#" class="nav-link text-white">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
                     fill="currentColor"
-                    class="bi bi-music-note-list"
+                    class="bi bi-music-note-list me-2"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -161,14 +189,14 @@
                   La tua libreria</a
                 >
               </li>
-              <li class="nav-item mt-3">
+              <li class="nav-item mt-3 rounded-bottom-3 rounded-top-3">
                 <a href="#" class="nav-link text-white">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
                     fill="currentColor"
-                    class="bi bi-plus-square-fill"
+                    class="bi bi-plus-square-fill me-2"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -178,122 +206,164 @@
                   Crea playlist</a
                 >
               </li>
-              <li class="nav-item">
+              <li class="nav-item rounded-bottom-3 rounded-top-3">
                 <a href="#" class="nav-link text-white">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-heart-pulse-fill"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M1.475 9C2.702 10.84 4.779 12.871 8 15c3.221-2.129 5.298-4.16 6.525-6H12a.5.5 0 0 1-.464-.314l-1.457-3.642-1.598 5.593a.5.5 0 0 1-.945.049L5.889 6.568l-1.473 2.21A.5.5 0 0 1 4 9z"
-                    />
-                    <path
-                      d="M.88 8C-2.427 1.68 4.41-2 7.823 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C11.59-2 18.426 1.68 15.12 8h-2.783l-1.874-4.686a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8z"
-                    />
-                  </svg>
+                  <img
+                    src="https://alfasareekkan.github.io/spotify/assets/img/liked-songs-300.png"
+                    alt="Icona"
+                    style="width: 18px; height: 18px"
+                    class="me-2"
+                  />
+
                   Brani che ti piacciono
                 </a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item rounded-bottom-3 rounded-top-3">
                 <a
                   href="#"
-                  class="nav-link text-white border-bottom border-white"
+                  class="nav-link text-white border-bottom border-secondary"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-bookmarks"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1z"
-                    />
-                    <path
-                      d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1"
-                    />
-                  </svg>
+                  <img
+                    src="https://alan-tomaz.github.io/Spotify-Clone/img/your-episodes.png"
+                    alt="Icona"
+                    style="width: 18px; height: 18px"
+                    class="me-2"
+                  />
                   I tuoi episodi</a
                 >
               </li>
             </ul>
           </div>
-          <div class="z-1 position-sticky overflow-auto" style="height: 500px">
+          <div
+            class="z-1 position-sticky overflow-auto custom-scroll border-bottom border-secondary"
+            style="height: 500px"
+          >
             <div
               data-bs-spy="scroll"
               data-bs-target="#navbar-example2"
               data-bs-root-margin="0px 0px -40%"
               data-bs-smooth-scroll="true"
-              class="scrollspy-example bg-black p-3 rounded-2"
+              class="scrollspy-example bg-black m-1 text-white-50 small fs-6 m-1"
               tabindex="0"
-              id="scrollspy"
+              style="font-size: 6px"
             >
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-                error repudiandae dignissimos veniam consectetur! Possimus
-                quidem quaerat repellendus quam, impedit quis quos dolorum
-                perspiciatis officia, asperiores expedita! Ex, iure cumque!
+              <p class="m-1 rounded-bottom-3 rounded-top-3">
+                early stage emily syndrome
               </p>
-              <h4 id="scrollspyHeading1">First heading</h4>
-              <p>...</p>
-              <h4 id="scrollspyHeading2">Second heading</h4>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Distinctio possimus autem ducimus asperiores dolor totam hic
-                earum, doloribus temporibus voluptatibus quisquam dolorem
-                impedit quo vitae iusto? Vitae tempore accusantium soluta.
+              <p class="m-1 rounded-bottom-3 rounded-top-3">Be The Young</p>
+              <p class="m-1 rounded-bottom-3 rounded-top-3">saggio vibes</p>
+              <p class="m-1 rounded-bottom-3 rounded-top-3">
+                main character energy
               </p>
-              <h4 id="scrollspyHeading3">Third heading</h4>
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Ratione, dolorum, repudiandae cupiditate debitis, dicta quis
-                repellendus neque voluptates ex quas laboriosam blanditiis
-                quisquam vero libero. Explicabo impedit ad architecto nulla?
+              <p class="m-1 rounded-bottom-3 rounded-top-3">
+                that fucking mood
               </p>
-              <h4 id="scrollspyHeading4">Fourth heading</h4>
-              <p>...</p>
-              <h4 id="scrollspyHeading5">Fifth heading</h4>
-              <p>...</p>
+              <p class="m-1 rounded-bottom-3 rounded-top-3">
+                VEE CARLOTTA E GIACOMO
+              </p>
+              <p class="m-1 rounded-bottom-3 rounded-top-3">
+                An emily Winchester kind of mood
+              </p>
+              <p class="m-1 rounded-bottom-3 rounded-top-3">landning page</p>
+              <p class="m-1 rounded-bottom-3 rounded-top-3">2021 lol</p>
+              <p class="m-1 rounded-bottom-3 rounded-top-3">
+                cosa cazzo vuol dire
+              </p>
+              <p class="m-1 1875rem">honey and glass</p>
+              <p class="m-1 rounded-bottom-3 rounded-top-3">
+                (revenge) training arc
+              </p>
+              <p class="m-1 rounded-bottom-3 rounded-top-3">
+                minecratf & nintendo switch
+              </p>
+              <p class="m-1 rounded-bottom-3 rounded-top-3">
+                silvano d'orba? I hardly know her
+              </p>
+              <p class="m-1 rounded-bottom-3 rounded-top-3">Culo 2022</p>
+              <p class="m-1 rounded-bottom-3 rounded-top-3">
+                Frah Quintale mix
+              </p>
+              <p class="m-1 rounded-bottom-3 rounded-top-3">
+                Francesco Guccini MIX
+              </p>
+
+              <p class="m-1 rounded-bottom-3 rounded-top-3">
+                early stage emily syndrome
+              </p>
+              <p class="m-1 rounded-bottom-3 rounded-top-3">Be The Young</p>
+              <p class="m-1 rounded-bottom-3 rounded-top-3">saggio vibes</p>
+              <p class="m-1 rounded-bottom-3 rounded-top-3">
+                main character energy
+              </p>
+              <p class="m-1 rounded-bottom-3 rounded-top-3">
+                that fucking mood
+              </p>
+              <p class="m-1 rounded-bottom-3 rounded-top-3">
+                VEE CARLOTTA E GIACOMO
+              </p>
+              <p class="m-1 rounded-bottom-3 rounded-top-3">
+                An emily Winchester kind of mood
+              </p>
+              <p class="m-1 rounded-bottom-3 rounded-top-3">landning page</p>
+              <p class="m-1 rounded-bottom-3 rounded-top-3">2021 lol</p>
+              <p class="m-1 rounded-bottom-3 rounded-top-3">
+                cosa cazzo vuol dire
+              </p>
+              <p class="m-1 1875rem">honey and glass</p>
+              <p class="m-1 rounded-bottom-3 rounded-top-3">
+                (revenge) training arc
+              </p>
+              <p class="m-1 rounded-bottom-3 rounded-top-3">
+                minecratf & nintendo switch
+              </p>
+              <p class="m-1 rounded-bottom-3 rounded-top-3">
+                silvano d'orba? I hardly know her
+              </p>
+              <p class="m-1 rounded-bottom-3 rounded-top-3">Culo 2022</p>
+              <p class="m-1 rounded-bottom-3 rounded-top-3">
+                Frah Quintale mix
+              </p>
+              <p class="m-1 rounded-bottom-3 rounded-top-3">
+                Francesco Guccini MIX
+              </p>
             </div>
-            <!-- <ul class="nav flex-column">
-              <li class="nav-item">
-                <a href="#" class="nav-link text-white"
-                  >Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Accusamus, illo quos vero modi, autem sunt earum sed vitae
-                  expedita soluta quis explicabo accusantium repellat quibusdam
-                  nam, incidunt hic consequuntur sint?</a
-                >
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link text-white"
-                  >Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Dolor, reiciendis doloribus illo illum magni rem voluptas vero
-                  a soluta explicabo cumque necessitatibus praesentium
-                  consectetur dolores libero repudiandae accusantium similique
-                  veniam!</a
-                >
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link text-white"
-                  >Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
-                  repellat, atque quis porro totam eius doloremque, tenetur
-                  consectetur accusamus dignissimos nemo rem ipsam illum ad ut
-                  vel, pariatur earum enim?</a
-                >
-              </li>
-            </ul> -->
           </div>
         </nav>
-        <article class="col-md-7 col-lg-7 min-vh-100" id="events-row"></article>
+        <!-- BARRA CENTRALE -->
 
-        <div
-          class="col-md-2 col-lg-2 d-none d-sm-block bg-black text-white min-vh-100"
-        >
+        <article class="col-md-9 col-lg-7 min-vh-100" id="events-row"></article>
+        <!-- BARRA DESTRA -->
+        <div class="col-lg-2 d-none d-sm-block bg-black text-white min-vh-100">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h6 class="mb-0">Attività Amici</h6>
+            <div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-people-fill me-2"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-x-lg"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
+                />
+              </svg>
+            </div>
+          </div>
+
           <div class="container">
             <div class="card">
               <div class="card-body row bg-black text-white position-relative">
