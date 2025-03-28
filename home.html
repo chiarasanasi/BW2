@@ -402,37 +402,37 @@
 
           <!-- CARD CENTRALE -->
           <div
-            id="collapseExample"
             class="container-fluid p-5 position-relative rounded-3 my-5"
             style="background: linear-gradient(to top, black, #2c2c2c)"
           >
-            <div class="d-flex align-items-center collapse show">
-              <!-- Aggiunto "show" -->
-              <button
-                class="bg-dark border-0 text-light-emphasis position-absolute rounded-5 top-0 end-0 m-4 px-3 py-2"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseExample"
-                aria-expanded="true"
-                aria-controls="collapseExample"
-              >
-                Nascondi sezione
-              </button>
-              <img
-                src="./assets/imgs/search/image-42.png"
-                alt="Copertina Album"
-                class="img-fluid rounded me-3"
-                style="width: 200px"
-              />
-              <div class="text-white">
-                <h6 class="text-uppercase">Playlist</h6>
-                <h1 class="fw-bold">POP MIX</h1>
-                <p>I tuoi artisti preferiti</p>
-                <button class="btn-custom">Play</button>
-                <button class="btn-custom2">Salva</button>
+            <button
+              class="bg-dark border-0 text-light-emphasis position-absolute rounded-5 top-0 end-0 m-4 px-3 py-2"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseExample"
+              aria-expanded="true"
+              aria-controls="collapseExample"
+            >
+              Nascondi sezione
+            </button>
+
+            <div class="collapse show" id="collapseExample">
+              <div class="d-flex align-items-center">
+                <img
+                  src="./assets/imgs/search/image-42.png"
+                  alt="Copertina Album"
+                  class="img-fluid rounded me-3"
+                  style="width: 200px"
+                />
+                <div class="text-white">
+                  <h6 class="text-uppercase">Playlist</h6>
+                  <h1 class="fw-bold">POP MIX</h1>
+                  <p>I tuoi artisti preferiti</p>
+                  <button class="btn-custom">Play</button>
+                  <button class="btn-custom2">Salva</button>
+                </div>
               </div>
             </div>
           </div>
-
           <!-- ALBUM CHE POTREBBERO PIACERTI : PARTE FATTA IN JS -->
 
           <div>
